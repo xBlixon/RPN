@@ -1,6 +1,8 @@
 #include <cstdio>
+#include "RPN.h"
 
 int main() {
-    printf("Hello world!");
+    Hello();
+    printf("\nHello world!");
     return 0;
 }
