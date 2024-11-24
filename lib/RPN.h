@@ -1,3 +1,10 @@
 #pragma once
+#include <string>
 
-void Hello();
+struct RPNEquation {
+    explicit RPNEquation(std::string equation);
+private:
+    std::string equation;
+    double result = 0.0f;
+    void solve();
+};
