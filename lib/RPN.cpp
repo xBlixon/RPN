@@ -46,6 +46,6 @@ void RPNEquation::solve() {
     }
 }
 
-bool RPNEquation::isOperator(std::string op) {
+bool RPNEquation::isOperator(const std::string& op) {
     return RPNEquation::operators.count(op) > 0;
 }
