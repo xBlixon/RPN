@@ -7,7 +7,7 @@
 #include <unordered_set>
 #include "RPN.h"
 
-int calculate(int a, int b, std::string op) {
+int calculate(const int& a, const int& b, const std::string& op) {
     switch (op[0]) {
         case '*':
             return a*b;
