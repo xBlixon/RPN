@@ -4,6 +4,7 @@
 
 struct RPNEquation {
     explicit RPNEquation(std::string equation);
+    double getResult() const;
 private:
     std::string equation;
     static bool isOperator(const std::string& op);

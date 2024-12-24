@@ -70,6 +70,13 @@ void RPNEquation::solve() {
     result = numbers.top();
 }
 
+/**
+ * Returns the result of the given equation.
+ */
+double RPNEquation::getResult() const {
+    return result;
+}
+
 bool RPNEquation::isOperator(const std::string& op) {
     return operators.count(op) > 0;
 }
