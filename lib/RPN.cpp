@@ -77,6 +77,12 @@ double RPNEquation::getResult() const {
     return result;
 }
 
+/**
+ * Checks if the string is a mathematical operator
+ * supported by this struct.
+ * @param op String tested for being a valid math operator
+ * @return
+ */
 bool RPNEquation::isOperator(const std::string& op) {
     return operators.count(op) > 0;
 }
