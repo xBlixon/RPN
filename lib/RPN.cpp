@@ -29,13 +29,12 @@ RPNEquation::RPNEquation(std::string equation) {
 }
 
 void RPNEquation::solve() {
-    std::unordered_set<std::string> operators = {"*", "/", "+", "-"};
     std::stringstream sstream(this->equation);
     std::string element;
     std::stack<int> numbers;
     while (sstream >> element) {
         std::cout << element << std::endl;
-        if (operators.count(element) > 0) {
+        if (isOperator(element)) {
             int a = numbers.top();
             numbers.pop();
             int b = numbers.top();
@@ -45,4 +44,9 @@ void RPNEquation::solve() {
             numbers.push(std::stoi(element));
         }
     }
+}
+
+bool RPNEquation::isOperator(std::string op) {
+    static std::unordered_set<std::string> operators = {"*", "/", "+", "-"};
+    return operators.count(op) > 0;
 }
