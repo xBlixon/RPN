@@ -24,7 +24,7 @@ int calculate(int a, int b, std::string op) {
 
 RPNEquation::RPNEquation(std::string equation) {
     this->equation = std::move(equation);
-    std::cout<< this->equation << "\n";
+    RPNEquation::operators = std::unordered_set<std::string>{"*", "/", "+", "-"};
     this->solve();
 }
 
@@ -47,6 +47,5 @@ void RPNEquation::solve() {
 }
 
 bool RPNEquation::isOperator(std::string op) {
-    static std::unordered_set<std::string> operators = {"*", "/", "+", "-"};
-    return operators.count(op) > 0;
+    return RPNEquation::operators.count(op) > 0;
 }
