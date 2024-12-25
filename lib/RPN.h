@@ -4,6 +4,15 @@
 #include <sstream>
 
 namespace RPN {
+    struct TokenReader {
+        explicit TokenReader(const std::string& string);
+        std::string getString();
+        std::string next();
+    private:
+        std::string string_;
+        std::stringstream stream;
+    };
+
     struct Equation {
         explicit Equation(std::string equation);
         double getResult() const;
@@ -14,14 +23,5 @@ namespace RPN {
         static const std::unordered_set<std::string> operators;
         double result = 0.0f;
         void solve();
-    };
-
-    struct TokenReader {
-        explicit TokenReader(const std::string& string);
-        std::string getString();
-        std::string next();
-    private:
-        std::string string_;
-        std::stringstream stream;
     };
 }
