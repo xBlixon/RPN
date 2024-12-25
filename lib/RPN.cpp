@@ -31,6 +31,7 @@ const std::unordered_set<std::string> RPNEquation::operators = {
 
 RPNEquation::RPNEquation(std::string equation) {
     this->equation = std::move(equation);
+    this->stream = std::stringstream(this->equation);
     this->solve();
 }
 
@@ -41,10 +42,9 @@ RPNEquation::RPNEquation(std::string equation) {
  * result member of the struct.
  */
 void RPNEquation::solve() {
-    std::stringstream sstream(this->equation);
     std::string element;
     std::stack<int> numbers;
-    while (sstream >> element) {
+    while (stream >> element) {
         std::cout << element << std::endl;
         if (isOperator(element)) {
             /**
