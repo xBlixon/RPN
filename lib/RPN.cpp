@@ -22,14 +22,14 @@ int calculate(const int& a, const int& b, const std::string& op) {
     }
 }
 
-const std::unordered_set<std::string> RPNEquation::operators = {
+const std::unordered_set<std::string> RPN::Equation::operators = {
     "*",
     "/",
     "+",
     "-"
 };
 
-RPNEquation::RPNEquation(std::string equation) {
+RPN::Equation::Equation(std::string equation) {
     this->equation = std::move(equation);
     this->stream = std::stringstream(this->equation);
     this->solve();
@@ -41,7 +41,7 @@ RPNEquation::RPNEquation(std::string equation) {
  * and assigns the result to the
  * result member of the struct.
  */
-void RPNEquation::solve() {
+void RPN::Equation::solve() {
     std::string element;
     std::stack<int> numbers;
     while (stream >> element) {
@@ -73,7 +73,7 @@ void RPNEquation::solve() {
 /**
  * Returns the result of the given equation.
  */
-double RPNEquation::getResult() const {
+double RPN::Equation::getResult() const {
     return result;
 }
 
@@ -83,6 +83,6 @@ double RPNEquation::getResult() const {
  * @param op String tested for being a valid math operator
  * @return
  */
-bool RPNEquation::isOperator(const std::string& op) {
+bool RPN::Equation::isOperator(const std::string& op) {
     return operators.count(op) > 0;
 }
