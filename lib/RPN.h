@@ -16,5 +16,12 @@ namespace RPN {
         void solve();
     };
 
-
+    struct TokenReader {
+        explicit TokenReader(const std::string& string);
+        std::string getString();
+        std::string next();
+    private:
+        std::string string_;
+        std::stringstream stream;
+    };
 }

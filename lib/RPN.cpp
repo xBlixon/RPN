@@ -87,6 +87,22 @@ namespace RPN {
     bool Equation::isOperator(const std::string& op) {
         return operators.count(op) > 0;
     }
+
+    TokenReader::TokenReader(const std::string& string) {
+        string_ = string;
+        stream = std::stringstream(string);
+    }
+
+    std::string TokenReader::next() {
+        std::string token;
+        stream >> token;
+        return token;
+    }
+
+    std::string TokenReader::getString() {
+        return string_;
+    }
+
 }
 
 
