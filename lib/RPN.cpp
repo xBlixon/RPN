@@ -8,7 +8,7 @@
 #include <unordered_set>
 #include "RPN.h"
 
-int calculate(const int& a, const int& b, const std::string& op) {
+double calculate(const double& a, const double& b, const std::string& op) {
     switch (op[0]) {
         case '*':
             return a*b;
@@ -31,16 +31,25 @@ namespace RPN {
         "-"
     };
 
+    /**
+     * Entrypoint for solving equations.
+     * @param equation String value containing either Infix or RPN equation.
+     */
     Equation::Equation(std::string equation) {
         this->equation = std::move(equation);
         this->stream = std::make_shared<TokenReader>(this->equation);
         this->solve();
     }
 
+    /**
+     * Private constructor used for recursive solving of equations
+     * in parentheses.
+     * @param stream Stream from the parent Equation object.
+     */
     Equation::Equation(const std::shared_ptr<TokenReader>& stream) {
         this->stream = std::shared_ptr<TokenReader>(stream);
         this->equation = stream->getString();
-        // this->solve(); // Work in progress
+        this->solve();
     }
 
 
@@ -52,9 +61,8 @@ namespace RPN {
      */
     void Equation::solve() {
         std::string token;
-        std::stack<int> numbers;
+        std::stack<double> numbers;
         while (!(token = stream->next()).empty()) {
-            std::cout << token << std::endl;
             if (isOperator(token)) {
                 /**
                  * Takes 2 tokens from the stack,
@@ -62,13 +70,18 @@ namespace RPN {
                  * the second to the result
                  * of the operation.
                  */
-                int b = numbers.top();
+                double b = numbers.top();
                 numbers.pop();
-                int& a = numbers.top();
-                int result = calculate(a, b, token);
+                double& a = numbers.top();
+                double result = calculate(a, b, token);
                 a = result;
+            } else if (token == "(") { // Calculate result for the equation in brackets
+                Equation nested_equation(stream);
+                numbers.push(nested_equation.getResult());
+            } else if (token == ")") { // Finish solving equation in brackets and return result.
+                break;
             } else {
-                numbers.push(std::stoi(token));
+                numbers.push(std::stod(token));
             }
         }
         /**
