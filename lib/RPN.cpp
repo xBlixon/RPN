@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <memory>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -32,9 +33,16 @@ namespace RPN {
 
     Equation::Equation(std::string equation) {
         this->equation = std::move(equation);
-        this->stream = std::stringstream(this->equation);
+        this->stream = std::make_shared<TokenReader>(this->equation);
         this->solve();
     }
+
+    Equation::Equation(const std::shared_ptr<TokenReader>& stream) {
+        this->stream = std::shared_ptr<TokenReader>(stream);
+        this->equation = stream->getString();
+        // this->solve(); // Work in progress
+    }
+
 
     /**
      * Solves the equation based on
@@ -43,13 +51,13 @@ namespace RPN {
      * result member of the struct.
      */
     void Equation::solve() {
-        std::string element;
+        std::string token;
         std::stack<int> numbers;
-        while (stream >> element) {
-            std::cout << element << std::endl;
-            if (isOperator(element)) {
+        while (!(token = stream->next()).empty()) {
+            std::cout << token << std::endl;
+            if (isOperator(token)) {
                 /**
-                 * Takes 2 elements from the stack,
+                 * Takes 2 tokens from the stack,
                  * removing the first and reassigning
                  * the second to the result
                  * of the operation.
@@ -57,15 +65,15 @@ namespace RPN {
                 int b = numbers.top();
                 numbers.pop();
                 int& a = numbers.top();
-                int result = calculate(a, b, element);
+                int result = calculate(a, b, token);
                 a = result;
             } else {
-                numbers.push(std::stoi(element));
+                numbers.push(std::stoi(token));
             }
         }
         /**
          * After the entire algorithm is done
-         * the stack should contain only 1 element,
+         * the stack should contain only 1 token,
          * which is equal to the result of the equation.
          */
         result = numbers.top();

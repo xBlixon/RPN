@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <string>
 #include <unordered_set>
 #include <sstream>
@@ -17,8 +18,9 @@ namespace RPN {
         explicit Equation(std::string equation);
         double getResult() const;
     private:
+        explicit Equation(const std::shared_ptr<TokenReader>& stream);
         std::string equation;
-        std::stringstream stream;
+        std::shared_ptr<TokenReader> stream;
         static bool isOperator(const std::string& op);
         static const std::unordered_set<std::string> operators;
         double result = 0.0f;
