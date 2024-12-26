@@ -5,6 +5,9 @@
 #include <sstream>
 
 namespace RPN {
+    /**
+    * Wrapper over std::stringstream for extracting tokens from the string.
+    */
     struct TokenReader {
         explicit TokenReader(const std::string& string);
         std::string getString();
@@ -14,6 +17,9 @@ namespace RPN {
         std::stringstream stream;
     };
 
+    /**
+    * Infix and RPN equation solver.
+    */
     struct Equation {
         explicit Equation(std::string equation);
         double getResult() const;

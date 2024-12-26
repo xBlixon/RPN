@@ -94,6 +94,7 @@ namespace RPN {
 
     /**
      * Returns the result of the given equation.
+     * @return Final result of the equation.
      */
     double Equation::getResult() const {
         return result;
@@ -103,23 +104,35 @@ namespace RPN {
      * Checks if the string is a mathematical operator
      * supported by this struct.
      * @param op String tested for being a valid math operator
-     * @return
+     * @return true = A math operator, false = Not a math operator
      */
     bool Equation::isOperator(const std::string& op) {
         return operators.count(op) > 0;
     }
 
+    /**
+     * Token reader constructor
+     * @param string Reference to the string from which tokens are read.
+     */
     TokenReader::TokenReader(const std::string& string) {
         string_ = string;
         stream = std::stringstream(string);
     }
 
+    /**
+     * Next tokens in the stream.
+     * @return Next token.
+     */
     std::string TokenReader::next() {
         std::string token;
         stream >> token;
         return token;
     }
 
+    /**
+     * Returns the entire string from which reader reads.
+     * @return Whole string
+     */
     std::string TokenReader::getString() {
         return string_;
     }
