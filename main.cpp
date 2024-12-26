@@ -5,7 +5,7 @@
 
 int main() {
     std::string strEquation;
-    printf("Please enter the equation:\n");
+    printf("Please enter the equation: ");
     std::getline(std::cin, strEquation);
     RPN::Equation equation = RPN::Equation(strEquation);
     std::cout<<"Result: " << equation.getResult()<<std::endl;
