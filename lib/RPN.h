@@ -27,8 +27,10 @@ namespace RPN {
         explicit Equation(const std::shared_ptr<TokenReader>& stream);
         std::string equation;
         std::shared_ptr<TokenReader> stream;
-        static bool isOperator(const std::string& op);
-        static const std::unordered_set<std::string> operators;
+        static bool is1ArgOperator(const std::string& op);
+        static bool is2ArgOperator(const std::string& op);
+        static const std::unordered_set<std::string> one_arg_operators;
+        static const std::unordered_set<std::string> two_arg_operators;
         double result = 0.0f;
         void solve();
     };
