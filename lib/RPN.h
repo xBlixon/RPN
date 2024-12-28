@@ -12,6 +12,7 @@ namespace RPN {
         explicit TokenReader(const std::string& string);
         std::string getString();
         std::string next();
+        bool finished() const;
     private:
         std::string string_;
         std::stringstream stream;
@@ -33,5 +34,9 @@ namespace RPN {
         static const std::unordered_set<std::string> two_arg_operators;
         double result = 0.0f;
         void solve();
+    };
+
+    struct NotationConverter {
+        static std::string infixToRPN(const std::string& infix);
     };
 }

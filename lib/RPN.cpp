@@ -7,6 +7,7 @@
 #include <unordered_set>
 #include <climits>
 #include <cmath>
+#include <map>
 #include "RPN.h"
 
 int sumLetters(const std::string& str) {
@@ -86,6 +87,16 @@ double calculate(const double& a, const std::string& op) {
             return LONG_MIN;
     }
 }
+
+const std::map<std::string, int> operatorPrecedence = {
+    {"^", 100},
+    {"sqrt", 100},
+    {"cbrt", 100},
+    {"*", 50},
+    {"/", 50},
+    {"+", 25},
+    {"-", 25},
+};
 
 namespace RPN {
     const std::unordered_set<std::string> Equation::one_arg_operators = {
@@ -226,6 +237,50 @@ namespace RPN {
         return string_;
     }
 
+    bool TokenReader::finished() const {
+        return stream.eof();
+    }
+
+    std::string NotationConverter::infixToRPN(const std::string &infix) {
+        std::string equation;
+        std::stack<std::string> operators;
+        TokenReader reader(infix);
+
+        while (!reader.finished()) {
+            std::string token = reader.next();
+            if (operatorPrecedence.count(token)) { // If token is operator or (
+                if (!operators.empty() && operators.top() != "(") { // If stack not empty and newest is not (
+                    std::string onStack = operators.top();
+                    if (operatorPrecedence.at(onStack) > operatorPrecedence.at(token)) {
+                        equation.append(onStack);
+                        equation.append(" ");
+                        operators.pop();
+                    }
+                }
+                operators.push(token);
+            } else if (token == "(") {
+                operators.push(token);
+            } else if (token == ")") {
+                while (operators.top() != "(") {
+                    std::string op = operators.top();
+                    equation.append(op);
+                    equation.append(" ");
+                    operators.pop();
+                }
+                operators.pop();
+            } else {
+                equation.append(token);
+                equation.append(" ");
+            }
+        }
+        while (!operators.empty()) {
+            std::string op = operators.top();
+            equation.append(op);
+            equation.append(" ");
+            operators.pop();
+        }
+        return equation;
+    }
 }
 
 
