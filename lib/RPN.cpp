@@ -98,6 +98,10 @@ const std::map<std::string, int> operatorPrecedence = {
     {"-", 25},
 };
 
+bool isOperator(const std::string& op) {
+    return operatorPrecedence.count(op) > 0;
+}
+
 namespace RPN {
     const std::unordered_set<std::string> Equation::one_arg_operators = {
         "sqrt",
@@ -241,6 +245,31 @@ namespace RPN {
         return stream.eof();
     }
 
+    std::string TokenReader::peek() {
+        std::streampos currentPos = stream.tellg();
+        std::string next = this->next();
+        stream.seekg(currentPos);
+        return next;
+    }
+
+    std::string NotationConverter::aopb(const std::string &a, const std::string &b, const std::string &op) {
+        std::string combined = a;
+        combined.append(" ");
+        combined.append(op);
+        combined.append(" ");
+        combined.append(b);
+        return combined;
+    }
+
+    std::string NotationConverter::wrapInParentheses(const std::string &a, const std::string &b, const std::string &op) {
+        std::string combined = "( ";
+        std::string aopbStr = aopb(a, b, op);
+        combined.append(aopbStr);
+        combined.append(" )");
+        return combined;
+    }
+
+
     std::string NotationConverter::infixToRPN(const std::string &infix) {
         std::string equation;
         std::stack<std::string> operators;
@@ -248,7 +277,7 @@ namespace RPN {
 
         while (!reader.finished()) {
             std::string token = reader.next();
-            if (operatorPrecedence.count(token)) { // If token is operator or (
+            if (isOperator(token)) {
                 if (!operators.empty() && operators.top() != "(") { // If stack not empty and newest is not (
                     std::string onStack = operators.top();
                     if (operatorPrecedence.at(onStack) >= operatorPrecedence.at(token)) {
@@ -281,6 +310,37 @@ namespace RPN {
         }
         return equation;
     }
+
+    std::string NotationConverter::RPNtoInfix(const std::string &RPN) {
+        TokenReader reader(RPN);
+        std::stack<std::string> infixStack;
+        while (!reader.finished()) {
+            std::string token = reader.next();
+            if (isOperator(token)) {
+                std::string rightOperand = infixStack.top();
+                infixStack.pop();
+                std::string& leftOperand = infixStack.top();
+
+                bool needsParentheses = false;
+                if (!reader.finished()) {
+                    std::string nextToken = reader.peek();
+                    if (!isOperator(nextToken)) {
+                        needsParentheses = true;
+                    } else {
+                        needsParentheses = operatorPrecedence.at(token) < operatorPrecedence.at(nextToken);
+                    }
+                }
+
+                leftOperand = needsParentheses
+                              ? wrapInParentheses(leftOperand, rightOperand, token)
+                              : aopb(leftOperand, rightOperand, token);
+            } else {
+                infixStack.push(token);
+            }
+        }
+        return infixStack.top();
+    }
+
 }
 
 

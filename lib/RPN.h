@@ -12,6 +12,7 @@ namespace RPN {
         explicit TokenReader(const std::string& string);
         std::string getString();
         std::string next();
+        std::string peek();
         bool finished() const;
     private:
         std::string string_;
@@ -38,5 +39,9 @@ namespace RPN {
 
     struct NotationConverter {
         static std::string infixToRPN(const std::string& infix);
+        static std::string RPNtoInfix(const std::string& RPN);
+    private:
+        static std::string wrapInParentheses(const std::string& a, const std::string& b, const std::string& op);
+        static std::string aopb(const std::string &a, const std::string &b, const std::string &op);
     };
 }
