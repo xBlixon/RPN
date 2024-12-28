@@ -251,7 +251,7 @@ namespace RPN {
             if (operatorPrecedence.count(token)) { // If token is operator or (
                 if (!operators.empty() && operators.top() != "(") { // If stack not empty and newest is not (
                     std::string onStack = operators.top();
-                    if (operatorPrecedence.at(onStack) > operatorPrecedence.at(token)) {
+                    if (operatorPrecedence.at(onStack) >= operatorPrecedence.at(token)) {
                         equation.append(onStack);
                         equation.append(" ");
                         operators.pop();
