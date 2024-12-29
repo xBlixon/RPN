@@ -108,7 +108,7 @@ bool isOperator(const std::string& op) {
 }
 
 namespace RPN {
-    const std::unordered_set<std::string> Equation::one_arg_operators = {
+    const std::unordered_set<std::string> RPNSolver::one_arg_operators = {
         "sqrt",
         "cbrt",
         "sin",
@@ -116,7 +116,7 @@ namespace RPN {
         "tan",
     };
 
-    const std::unordered_set<std::string> Equation::two_arg_operators = {
+    const std::unordered_set<std::string> RPNSolver::two_arg_operators = {
         "^",
         "*",
         "/",
@@ -126,21 +126,14 @@ namespace RPN {
     };
 
     /**
-     * Entrypoint for solving equations.
-     * @param equation String value containing either Infix or RPN equation.
-     */
-    Equation::Equation(const std::string& equation): equation(equation), reader(equation) {
-        this->solve();
-    }
-
-
-    /**
      * Solves the equation based on
      * the equation member of the struct
      * and assigns the result to the
      * result member of the struct.
      */
-    void Equation::solve() {
+    double RPNSolver::getResult(const std::string& equation) {
+        TokenReader reader(equation);
+
         std::string token;
         std::stack<double> numbers;
         while (!(token = reader.next()).empty()) {
@@ -167,15 +160,7 @@ namespace RPN {
          * the stack should contain only 1 token,
          * which is equal to the result of the equation.
          */
-        result = numbers.top();
-    }
-
-    /**
-     * Returns the result of the given equation.
-     * @return Final result of the equation.
-     */
-    double Equation::getResult() const {
-        return result;
+        return  numbers.top();
     }
 
     /**
@@ -184,7 +169,7 @@ namespace RPN {
      * @param op String tested for being a valid math operator
      * @return true = A math operator, false = Not a math operator
      */
-    bool Equation::is1ArgOperator(const std::string& op) {
+    bool RPNSolver::is1ArgOperator(const std::string& op) {
         return one_arg_operators.count(op) > 0;
     }
 
@@ -194,7 +179,7 @@ namespace RPN {
      * @param op String tested for being a valid math operator
      * @return true = A math operator, false = Not a math operator
      */
-    bool Equation::is2ArgOperator(const std::string& op) {
+    bool RPNSolver::is2ArgOperator(const std::string& op) {
         return two_arg_operators.count(op) > 0;
     }
 

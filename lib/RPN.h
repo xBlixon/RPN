@@ -22,18 +22,13 @@ namespace RPN {
     /**
     * Infix and RPN equation solver.
     */
-    struct Equation {
-        explicit Equation(const std::string& equation);
-        double getResult() const;
+    struct RPNSolver {
+        static double getResult(const std::string& equation);
     private:
-        std::string equation;
-        TokenReader reader;
         static bool is1ArgOperator(const std::string& op);
         static bool is2ArgOperator(const std::string& op);
         static const std::unordered_set<std::string> one_arg_operators;
         static const std::unordered_set<std::string> two_arg_operators;
-        double result = 0.0f;
-        void solve();
     };
 
     struct NotationConverter {
