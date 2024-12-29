@@ -54,8 +54,6 @@ double calculate(const double& a, const double& b, const std::string& op) {
             return a+b;
         case '-':
             return a-b;
-        case '%':
-            return std::fmod(a, b);
         case '^':
             return std::pow(a, b);
         default:
@@ -75,8 +73,6 @@ double calculate(const double& a, const std::string& op) {
             return handleCbrt(a);
         case 310: //abs
             return std::abs(a);
-        case 314: //neg
-            return -a;
         case 330: //sin
             return std::sin(a);
         case 325: //cos
@@ -102,6 +98,7 @@ const std::map<std::string, int> operatorPrecedence = {
     {"tan", TRIG_FUN_PREC},
     {"*", MULT_DIV_PREC},
     {"/", MULT_DIV_PREC},
+    {"\\", MULT_DIV_PREC},
     {"+", ADD_SUB_PREC},
     {"-", ADD_SUB_PREC},
 };
@@ -114,41 +111,25 @@ namespace RPN {
     const std::unordered_set<std::string> Equation::one_arg_operators = {
         "sqrt",
         "cbrt",
-        "abs",
-        "neg",
         "sin",
         "cos",
         "tan",
     };
 
     const std::unordered_set<std::string> Equation::two_arg_operators = {
+        "^",
         "*",
         "/",
         "\\",
         "+",
-        "-",
-        "%",
-        "^"
+        "-"
     };
 
     /**
      * Entrypoint for solving equations.
      * @param equation String value containing either Infix or RPN equation.
      */
-    Equation::Equation(std::string equation) {
-        this->equation = std::move(equation);
-        this->stream = std::make_shared<TokenReader>(this->equation);
-        this->solve();
-    }
-
-    /**
-     * Private constructor used for recursive solving of equations
-     * in parentheses.
-     * @param stream Stream from the parent Equation object.
-     */
-    Equation::Equation(const std::shared_ptr<TokenReader>& stream) {
-        this->stream = std::shared_ptr<TokenReader>(stream);
-        this->equation = stream->getString();
+    Equation::Equation(const std::string& equation): equation(equation), reader(equation) {
         this->solve();
     }
 
@@ -162,7 +143,7 @@ namespace RPN {
     void Equation::solve() {
         std::string token;
         std::stack<double> numbers;
-        while (!(token = stream->next()).empty()) {
+        while (!(token = reader.next()).empty()) {
             if (is1ArgOperator(token)) {
                 double& a = numbers.top();
                 a = calculate(a, token);
@@ -177,11 +158,6 @@ namespace RPN {
                 numbers.pop();
                 double& a = numbers.top();
                 a = calculate(a, b, token);
-            } else if (token == "(") { // Calculate result for the equation in brackets
-                Equation nested_equation(stream);
-                numbers.push(nested_equation.getResult());
-            } else if (token == ")") { // Finish solving equation in brackets and return result.
-                break;
             } else {
                 numbers.push(std::stod(token));
             }

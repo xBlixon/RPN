@@ -23,12 +23,11 @@ namespace RPN {
     * Infix and RPN equation solver.
     */
     struct Equation {
-        explicit Equation(std::string equation);
+        explicit Equation(const std::string& equation);
         double getResult() const;
     private:
-        explicit Equation(const std::shared_ptr<TokenReader>& stream);
         std::string equation;
-        std::shared_ptr<TokenReader> stream;
+        TokenReader reader;
         static bool is1ArgOperator(const std::string& op);
         static bool is2ArgOperator(const std::string& op);
         static const std::unordered_set<std::string> one_arg_operators;
