@@ -44,4 +44,9 @@ namespace RPN {
         static std::string wrapInParentheses(const std::string& a, const std::string& b, const std::string& op);
         static std::string aopb(const std::string &a, const std::string &b, const std::string &op);
     };
+
+    struct NotationDeterminer {
+        static bool isRPN(const std::string& equation);
+        static bool isInfix(const std::string& equation);
+    };
 }

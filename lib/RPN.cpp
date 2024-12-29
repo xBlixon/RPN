@@ -277,7 +277,6 @@ namespace RPN {
         return combined;
     }
 
-
     std::string NotationConverter::infixToRPN(const std::string &infix) {
         std::string equation;
         std::stack<std::string> operators;
@@ -347,6 +346,20 @@ namespace RPN {
             }
         }
         return infixStack.top();
+    }
+
+    bool NotationDeterminer::isRPN(const std::string &equation) {
+        TokenReader reader(equation);
+        std::string lastToken;
+        while (!reader.finished()) {
+            lastToken = reader.next();
+        }
+        // Last token in RPN is always an operator.
+        return isOperator(lastToken);
+    }
+
+    bool NotationDeterminer::isInfix(const std::string &equation) {
+        return !isRPN(equation);
     }
 
 }
