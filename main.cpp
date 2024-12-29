@@ -5,9 +5,21 @@
 
 int main() {
     std::string strEquation;
-    printf("Please enter the equation: ");
+    printf("Enter the equation: ");
     std::getline(std::cin, strEquation);
-    RPN::Equation equation = RPN::Equation(strEquation);
-    std::cout<<"Result: " << equation.getResult()<<std::endl;
+    std::string rpn;
+    std::string infix;
+    if (RPN::NotationDeterminer::isInfix(strEquation)) {
+        infix = std::move(strEquation);
+        rpn = RPN::NotationConverter::infixToRPN(infix);
+    } else {
+        rpn = std::move(strEquation);
+        infix = RPN::NotationConverter::RPNtoInfix(rpn);
+    }
+
+    double result = RPN::RPNSolver::getResult(rpn);
+    std::cout << "RPN representation  : " << rpn    << std::endl;
+    std::cout << "Infix representation: " << infix  << std::endl;
+    std::cout << "Equation result     : " << result << std::endl;
     return 0;
 }
