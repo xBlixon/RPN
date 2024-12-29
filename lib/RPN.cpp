@@ -88,14 +88,22 @@ double calculate(const double& a, const std::string& op) {
     }
 }
 
+constexpr int EXP_PREC = 100;
+constexpr int TRIG_FUN_PREC = EXP_PREC-1;
+constexpr int MULT_DIV_PREC = TRIG_FUN_PREC-1;
+constexpr int ADD_SUB_PREC = MULT_DIV_PREC-1;
+
 const std::map<std::string, int> operatorPrecedence = {
-    {"^", 100},
-    {"sqrt", 100},
-    {"cbrt", 100},
-    {"*", 50},
-    {"/", 50},
-    {"+", 25},
-    {"-", 25},
+    {"^", EXP_PREC},
+    {"sqrt", EXP_PREC},
+    {"cbrt", EXP_PREC},
+    {"sin", TRIG_FUN_PREC},
+    {"cos", TRIG_FUN_PREC},
+    {"tan", TRIG_FUN_PREC},
+    {"*", MULT_DIV_PREC},
+    {"/", MULT_DIV_PREC},
+    {"+", ADD_SUB_PREC},
+    {"-", ADD_SUB_PREC},
 };
 
 bool isOperator(const std::string& op) {
