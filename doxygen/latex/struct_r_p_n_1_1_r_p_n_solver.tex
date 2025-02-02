@@ -1,0 +1,34 @@
+\doxysection{RPN\+::RPNSolver Struct Reference}
+\hypertarget{struct_r_p_n_1_1_r_p_n_solver}{}\label{struct_r_p_n_1_1_r_p_n_solver}\index{RPN::RPNSolver@{RPN::RPNSolver}}
+
+
+{\ttfamily \#include $<$RPN.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver_a982cf343839f6b239de485e23b9143e5}{get\+Result}} (const std\+::string \&equation)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_r_p_n}{RPN} equation solver. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_r_p_n_1_1_r_p_n_solver_a982cf343839f6b239de485e23b9143e5}\index{RPN::RPNSolver@{RPN::RPNSolver}!getResult@{getResult}}
+\index{getResult@{getResult}!RPN::RPNSolver@{RPN::RPNSolver}}
+\doxysubsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_r_p_n_solver_a982cf343839f6b239de485e23b9143e5} 
+double RPN\+::\+RPNSolver\+::get\+Result (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{equation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Solves for the result of the \doxylink{namespace_r_p_n}{RPN} equation. \begin{DoxyReturn}{Returns}
+Result of the \doxylink{namespace_r_p_n}{RPN} equation. 
+\end{DoxyReturn}
+Takes 2 tokens from the stack, removing the first and reassigning the second to the result of the operation.
+
+After the entire algorithm is done the stack should contain only 1 token, which is equal to the result of the equation.
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\mbox{\hyperlink{_r_p_n_8h}{RPN.\+h}}\item 
+lib/\mbox{\hyperlink{_r_p_n_8cpp}{RPN.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\doxysection{lib/\+RPN.cpp File Reference}
+\hypertarget{_r_p_n_8cpp}{}\label{_r_p_n_8cpp}\index{lib/RPN.cpp@{lib/RPN.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include "{}RPN.\+h"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_r_p_n}{RPN}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespace_r_p_n_a3a36e2730c954cfb258f13773efe6a57}{RPN\+::sum\+Letters}} (const std\+::string \&str)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a30f0dc82e654f7488605195eab2ffbdd}{RPN\+::handle\+Division}} (const double \&a, const double \&b)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a083ba7675db30910692cf44242dac9bb}{RPN\+::handle\+Sqrt}} (const double \&a)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245}{RPN\+::handle\+Cbrt}} (const double \&a)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_af16e949c3d07263defd352296be192b4}{RPN\+::calculate}} (const double \&a, const double \&b, const std\+::string \&op)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a41a1f57c34db2840641d9a451864e2e4}{RPN\+::calculate}} (const double \&a, const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_a31760f8d403f274efee648b0e1abf2bd}{RPN\+::is\+Operator}} (const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{RPN\+::is1\+Arg\+Operator}} (const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{RPN\+::is2\+Arg\+Operator}} (const std\+::string \&op)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{RPN\+::\+EXP\+\_\+\+PREC}} = 100
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{RPN\+::\+TRIG\+\_\+\+FUN\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\+\_\+\+PREC}}-\/1
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{RPN\+::\+MULT\+\_\+\+DIV\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\+\_\+\+FUN\+\_\+\+PREC}}-\/1
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}{RPN\+::\+ADD\+\_\+\+SUB\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\+\_\+\+DIV\+\_\+\+PREC}}-\/1
+\item 
+const std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{namespace_r_p_n_ac9384bfd0591693609addd50100f157f}{RPN\+::operator\+Precedence}}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72}{RPN\+::one\+\_\+arg\+\_\+operators}}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf}{RPN\+::two\+\_\+arg\+\_\+operators}}
+\end{DoxyCompactItemize}

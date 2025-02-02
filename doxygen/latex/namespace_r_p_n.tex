@@ -1,0 +1,264 @@
+\doxysection{RPN Namespace Reference}
+\hypertarget{namespace_r_p_n}{}\label{namespace_r_p_n}\index{RPN@{RPN}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter}{Notation\+Converter}}
+\item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner}{Notation\+Determiner}}
+\item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver}{RPNSolver}}
+\item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{Token\+Reader}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespace_r_p_n_a3a36e2730c954cfb258f13773efe6a57}{sum\+Letters}} (const std\+::string \&str)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a30f0dc82e654f7488605195eab2ffbdd}{handle\+Division}} (const double \&a, const double \&b)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a083ba7675db30910692cf44242dac9bb}{handle\+Sqrt}} (const double \&a)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245}{handle\+Cbrt}} (const double \&a)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_af16e949c3d07263defd352296be192b4}{calculate}} (const double \&a, const double \&b, const std\+::string \&op)
+\item 
+double \mbox{\hyperlink{namespace_r_p_n_a41a1f57c34db2840641d9a451864e2e4}{calculate}} (const double \&a, const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_a31760f8d403f274efee648b0e1abf2bd}{is\+Operator}} (const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{is1\+Arg\+Operator}} (const std\+::string \&op)
+\item 
+bool \mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{is2\+Arg\+Operator}} (const std\+::string \&op)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\+\_\+\+PREC}} = 100
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\+\_\+\+FUN\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\+\_\+\+PREC}}-\/1
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\+\_\+\+DIV\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\+\_\+\+FUN\+\_\+\+PREC}}-\/1
+\item 
+constexpr int \mbox{\hyperlink{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}{ADD\+\_\+\+SUB\+\_\+\+PREC}} = \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\+\_\+\+DIV\+\_\+\+PREC}}-\/1
+\item 
+const std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{namespace_r_p_n_ac9384bfd0591693609addd50100f157f}{operator\+Precedence}}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72}{one\+\_\+arg\+\_\+operators}}
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \mbox{\hyperlink{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf}{two\+\_\+arg\+\_\+operators}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_r_p_n_af16e949c3d07263defd352296be192b4}\index{RPN@{RPN}!calculate@{calculate}}
+\index{calculate@{calculate}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_af16e949c3d07263defd352296be192b4} 
+double RPN\+::calculate (\begin{DoxyParamCaption}\item[{const double \&}]{a}{, }\item[{const double \&}]{b}{, }\item[{const std\+::string \&}]{op}{}\end{DoxyParamCaption})}
+
+Given operator and operands calculates the result 
+\begin{DoxyParams}{Parameters}
+{\em a} & left operand \\
+\hline
+{\em b} & right operand \\
+\hline
+{\em op} & operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_a41a1f57c34db2840641d9a451864e2e4}\index{RPN@{RPN}!calculate@{calculate}}
+\index{calculate@{calculate}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a41a1f57c34db2840641d9a451864e2e4} 
+double RPN\+::calculate (\begin{DoxyParamCaption}\item[{const double \&}]{a}{, }\item[{const std\+::string \&}]{op}{}\end{DoxyParamCaption})}
+
+Given operator and operand calculates the result 
+\begin{DoxyParams}{Parameters}
+{\em a} & operand \\
+\hline
+{\em op} & operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result 
+\end{DoxyReturn}
+Integers found in cases of this switch come from the sum of ascii values of letters of the operators.\Hypertarget{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245}\index{RPN@{RPN}!handleCbrt@{handleCbrt}}
+\index{handleCbrt@{handleCbrt}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{handleCbrt()}{handleCbrt()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245} 
+double RPN\+::handle\+Cbrt (\begin{DoxyParamCaption}\item[{const double \&}]{a}{}\end{DoxyParamCaption})}
+
+Calculates cubic roots and errors on negative numbers. 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cbrt(a) 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_a30f0dc82e654f7488605195eab2ffbdd}\index{RPN@{RPN}!handleDivision@{handleDivision}}
+\index{handleDivision@{handleDivision}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{handleDivision()}{handleDivision()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a30f0dc82e654f7488605195eab2ffbdd} 
+double RPN\+::handle\+Division (\begin{DoxyParamCaption}\item[{const double \&}]{a}{, }\item[{const double \&}]{b}{}\end{DoxyParamCaption})}
+
+Handler for division. Throws error on divisor = 0. 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a/b 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_a083ba7675db30910692cf44242dac9bb}\index{RPN@{RPN}!handleSqrt@{handleSqrt}}
+\index{handleSqrt@{handleSqrt}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{handleSqrt()}{handleSqrt()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a083ba7675db30910692cf44242dac9bb} 
+double RPN\+::handle\+Sqrt (\begin{DoxyParamCaption}\item[{const double \&}]{a}{}\end{DoxyParamCaption})}
+
+Calculates square roots and errors on negative numbers. 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sqrt(a) 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}\index{RPN@{RPN}!is1ArgOperator@{is1ArgOperator}}
+\index{is1ArgOperator@{is1ArgOperator}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{is1ArgOperator()}{is1ArgOperator()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b} 
+bool RPN\+::is1\+Arg\+Operator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{op}{}\end{DoxyParamCaption})}
+
+Checks if given token is an operator that takes only 1 argument, e.\+g. sqrt(x). \begin{DoxyReturn}{Returns}
+true if is 1 argument operator. 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}\index{RPN@{RPN}!is2ArgOperator@{is2ArgOperator}}
+\index{is2ArgOperator@{is2ArgOperator}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{is2ArgOperator()}{is2ArgOperator()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778} 
+bool RPN\+::is2\+Arg\+Operator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{op}{}\end{DoxyParamCaption})}
+
+Checks if given token is an operator that takes 2 arguments, e.\+g. a + b. \begin{DoxyReturn}{Returns}
+true if is 2 argument operator. 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_a31760f8d403f274efee648b0e1abf2bd}\index{RPN@{RPN}!isOperator@{isOperator}}
+\index{isOperator@{isOperator}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{isOperator()}{isOperator()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a31760f8d403f274efee648b0e1abf2bd} 
+bool RPN\+::is\+Operator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{op}{}\end{DoxyParamCaption})}
+
+Checks if given string is a valid operator 
+\begin{DoxyParams}{Parameters}
+{\em op} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if string is an operator 
+\end{DoxyReturn}
+\Hypertarget{namespace_r_p_n_a3a36e2730c954cfb258f13773efe6a57}\index{RPN@{RPN}!sumLetters@{sumLetters}}
+\index{sumLetters@{sumLetters}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{sumLetters()}{sumLetters()}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a3a36e2730c954cfb258f13773efe6a57} 
+int RPN\+::sum\+Letters (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+Intermediate function used by calculate for 1 parameter operators. Sums ascii values of letters to determine which switch case use. 
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ascii sum of letters. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}\index{RPN@{RPN}!ADD\_SUB\_PREC@{ADD\_SUB\_PREC}}
+\index{ADD\_SUB\_PREC@{ADD\_SUB\_PREC}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{ADD\_SUB\_PREC}{ADD\_SUB\_PREC}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f} 
+int RPN\+::\+ADD\+\_\+\+SUB\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\+\_\+\+DIV\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Addition/subtraction precedence score. \Hypertarget{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}\index{RPN@{RPN}!EXP\_PREC@{EXP\_PREC}}
+\index{EXP\_PREC@{EXP\_PREC}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{EXP\_PREC}{EXP\_PREC}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3} 
+int RPN\+::\+EXP\+\_\+\+PREC = 100\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Exponential precedence score. \Hypertarget{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}\index{RPN@{RPN}!MULT\_DIV\_PREC@{MULT\_DIV\_PREC}}
+\index{MULT\_DIV\_PREC@{MULT\_DIV\_PREC}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{MULT\_DIV\_PREC}{MULT\_DIV\_PREC}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229} 
+int RPN\+::\+MULT\+\_\+\+DIV\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\+\_\+\+FUN\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Multiplication/division precedence score. \Hypertarget{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72}\index{RPN@{RPN}!one\_arg\_operators@{one\_arg\_operators}}
+\index{one\_arg\_operators@{one\_arg\_operators}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{one\_arg\_operators}{one\_arg\_operators}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72} 
+const std\+::unordered\+\_\+set$<$std\+::string$>$ RPN\+::one\+\_\+arg\+\_\+operators}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sqrt"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}cbrt"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}sin"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}cos"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}tan"{}},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+Operators taking 1 parameter \Hypertarget{namespace_r_p_n_ac9384bfd0591693609addd50100f157f}\index{RPN@{RPN}!operatorPrecedence@{operatorPrecedence}}
+\index{operatorPrecedence@{operatorPrecedence}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{operatorPrecedence}{operatorPrecedence}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_ac9384bfd0591693609addd50100f157f} 
+const std\+::map$<$std\+::string, int$>$ RPN\+::operator\+Precedence}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}\string^"{}},\ \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}sqrt"{}},\ \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}cbrt"{}},\ \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}sin"{}},\ \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\_FUN\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}cos"{}},\ \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\_FUN\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}tan"{}},\ \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\_FUN\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}*"{}},\ \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\_DIV\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}/"{}},\ \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\_DIV\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}},\ \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\_DIV\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}+"{}},\ \mbox{\hyperlink{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}{ADD\_SUB\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}-\/"{}},\ \mbox{\hyperlink{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}{ADD\_SUB\_PREC}}\},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+Mapped precedences to operators. \Hypertarget{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}\index{RPN@{RPN}!TRIG\_FUN\_PREC@{TRIG\_FUN\_PREC}}
+\index{TRIG\_FUN\_PREC@{TRIG\_FUN\_PREC}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{TRIG\_FUN\_PREC}{TRIG\_FUN\_PREC}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551} 
+int RPN\+::\+TRIG\+\_\+\+FUN\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Trigonometric functions precedence score. \Hypertarget{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf}\index{RPN@{RPN}!two\_arg\_operators@{two\_arg\_operators}}
+\index{two\_arg\_operators@{two\_arg\_operators}!RPN@{RPN}}
+\doxysubsubsection{\texorpdfstring{two\_arg\_operators}{two\_arg\_operators}}
+{\footnotesize\ttfamily \label{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf} 
+const std\+::unordered\+\_\+set$<$std\+::string$>$ RPN\+::two\+\_\+arg\+\_\+operators}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\string^"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}*"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}/"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}+"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/"{}}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+Operators taking 2 parameters 

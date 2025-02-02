@@ -1,0 +1,41 @@
+\doxysection{RPN.\+h}
+\hypertarget{_r_p_n_8h_source}{}\label{_r_p_n_8h_source}\index{lib/RPN.h@{lib/RPN.h}}
+\mbox{\hyperlink{_r_p_n_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_r_p_n}{RPN}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a1d651714a7de1ee1a3fdf54f6c2a4f65}{TokenReader}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a1d651714a7de1ee1a3fdf54f6c2a4f65}{TokenReader}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{string});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_ad9187d693e72333ff98170ef48958c53}{getString}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_ab3a1413ea53858ffb317d34d38723a17}{peek}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::string\ string\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::stringstream\ stream;}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver}{RPNSolver}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver_a982cf343839f6b239de485e23b9143e5}{getResult}}(\textcolor{keyword}{const}\ std::string\&\ equation);}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_p_n_1_1_notation_converter}{NotationConverter}}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_acdf461ac2999cf623a956940f6ac32b9}{infixToRPN}}(\textcolor{keyword}{const}\ std::string\&\ infix);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_ae6a9e2950406c24d83680876393392af}{RPNtoInfix}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{namespace_r_p_n}{RPN}});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ wrapInParentheses(\textcolor{keyword}{const}\ std::string\&\ a,\ \textcolor{keyword}{const}\ std::string\&\ b,\ \textcolor{keyword}{const}\ std::string\&\ op);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ aopb(\textcolor{keyword}{const}\ std::string\ \&a,\ \textcolor{keyword}{const}\ std::string\ \&b,\ \textcolor{keyword}{const}\ std::string\ \&op);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ onlyParentheses(\textcolor{keyword}{const}\ std::string\ \&a);}
+\DoxyCodeLine{00089\ \ \ \ \ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner}{NotationDeterminer}}\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner_aa0062e501c0d2962918dcec37b417eb8}{isRPN}}(\textcolor{keyword}{const}\ std::string\&\ equation);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner_a8e0ae7ea205e7d39fe11c3f091d7117f}{isInfix}}(\textcolor{keyword}{const}\ std::string\&\ equation);}
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}

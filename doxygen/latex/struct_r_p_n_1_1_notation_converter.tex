@@ -1,0 +1,53 @@
+\doxysection{RPN\+::Notation\+Converter Struct Reference}
+\hypertarget{struct_r_p_n_1_1_notation_converter}{}\label{struct_r_p_n_1_1_notation_converter}\index{RPN::NotationConverter@{RPN::NotationConverter}}
+
+
+{\ttfamily \#include $<$RPN.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_acdf461ac2999cf623a956940f6ac32b9}{infix\+To\+RPN}} (const std\+::string \&infix)
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_ae6a9e2950406c24d83680876393392af}{RPNto\+Infix}} (const std\+::string \&RPN)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct able to convert Infix to \doxylink{namespace_r_p_n}{RPN} and vice versa. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_r_p_n_1_1_notation_converter_acdf461ac2999cf623a956940f6ac32b9}\index{RPN::NotationConverter@{RPN::NotationConverter}!infixToRPN@{infixToRPN}}
+\index{infixToRPN@{infixToRPN}!RPN::NotationConverter@{RPN::NotationConverter}}
+\doxysubsubsection{\texorpdfstring{infixToRPN()}{infixToRPN()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_notation_converter_acdf461ac2999cf623a956940f6ac32b9} 
+std\+::string RPN\+::\+Notation\+Converter\+::infix\+To\+RPN (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{infix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Given infix equation string, converts it into \doxylink{namespace_r_p_n}{RPN} equation. 
+\begin{DoxyParams}{Parameters}
+{\em infix} & Infix equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_r_p_n}{RPN} equation. 
+\end{DoxyReturn}
+\Hypertarget{struct_r_p_n_1_1_notation_converter_ae6a9e2950406c24d83680876393392af}\index{RPN::NotationConverter@{RPN::NotationConverter}!RPNtoInfix@{RPNtoInfix}}
+\index{RPNtoInfix@{RPNtoInfix}!RPN::NotationConverter@{RPN::NotationConverter}}
+\doxysubsubsection{\texorpdfstring{RPNtoInfix()}{RPNtoInfix()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_notation_converter_ae6a9e2950406c24d83680876393392af} 
+std\+::string RPN\+::\+Notation\+Converter\+::\+RPNto\+Infix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{RPN}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Given \doxylink{namespace_r_p_n}{RPN} equation string, converts it into infix equation. 
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{namespace_r_p_n}{RPN}} & \doxylink{namespace_r_p_n}{RPN} equation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Infix equation. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\mbox{\hyperlink{_r_p_n_8h}{RPN.\+h}}\item 
+lib/\mbox{\hyperlink{_r_p_n_8cpp}{RPN.\+cpp}}\end{DoxyCompactItemize}

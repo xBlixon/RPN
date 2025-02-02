@@ -1,0 +1,52 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.2)  2 FEB 2025 18:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./refman.tex
+(refman.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
+File: bk10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@chapter=\count197
+\c@section=\count198
+\c@subsection=\count199
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Rollback for package 'array' requested -> date 2016-10-06.
+         Best approximation is the release introduced on 2016-10-06.
+
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/tools\array-2016-10-06
+.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen142
+\extrarowheight=\dimen143
+\NC@list=\toks17
+\extratabsurround=\skip51
+\backup@length=\skip52
+))
+
+! LaTeX Error: File `infwarerr.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 

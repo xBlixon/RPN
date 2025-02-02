@@ -1,0 +1,81 @@
+\doxysection{RPN\+::Token\+Reader Struct Reference}
+\hypertarget{struct_r_p_n_1_1_token_reader}{}\label{struct_r_p_n_1_1_token_reader}\index{RPN::TokenReader@{RPN::TokenReader}}
+
+
+{\ttfamily \#include $<$RPN.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a1d651714a7de1ee1a3fdf54f6c2a4f65}{Token\+Reader}} (const std\+::string \&string)
+\item 
+std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_ad9187d693e72333ff98170ef48958c53}{get\+String}} ()
+\item 
+std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}} ()
+\item 
+std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_ab3a1413ea53858ffb317d34d38723a17}{peek}} ()
+\item 
+bool \mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper over std\+::stringstream for extracting tokens from the string. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_r_p_n_1_1_token_reader_a1d651714a7de1ee1a3fdf54f6c2a4f65}\index{RPN::TokenReader@{RPN::TokenReader}!TokenReader@{TokenReader}}
+\index{TokenReader@{TokenReader}!RPN::TokenReader@{RPN::TokenReader}}
+\doxysubsubsection{\texorpdfstring{TokenReader()}{TokenReader()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_token_reader_a1d651714a7de1ee1a3fdf54f6c2a4f65} 
+RPN\+::\+Token\+Reader\+::\+Token\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Token reader constructor 
+\begin{DoxyParams}{Parameters}
+{\em string} & Reference to the string from which tokens are read. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}\index{RPN::TokenReader@{RPN::TokenReader}!finished@{finished}}
+\index{finished@{finished}!RPN::TokenReader@{RPN::TokenReader}}
+\doxysubsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93} 
+bool RPN\+::\+Token\+Reader\+::finished (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Checks if stream came to an end. \begin{DoxyReturn}{Returns}
+true if stream has finished. 
+\end{DoxyReturn}
+\Hypertarget{struct_r_p_n_1_1_token_reader_ad9187d693e72333ff98170ef48958c53}\index{RPN::TokenReader@{RPN::TokenReader}!getString@{getString}}
+\index{getString@{getString}!RPN::TokenReader@{RPN::TokenReader}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_token_reader_ad9187d693e72333ff98170ef48958c53} 
+std\+::string RPN\+::\+Token\+Reader\+::get\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the entire string from which reader reads. \begin{DoxyReturn}{Returns}
+Whole string 
+\end{DoxyReturn}
+\Hypertarget{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}\index{RPN::TokenReader@{RPN::TokenReader}!next@{next}}
+\index{next@{next}!RPN::TokenReader@{RPN::TokenReader}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2} 
+std\+::string RPN\+::\+Token\+Reader\+::next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Next tokens in the stream. \begin{DoxyReturn}{Returns}
+Next token. 
+\end{DoxyReturn}
+\Hypertarget{struct_r_p_n_1_1_token_reader_ab3a1413ea53858ffb317d34d38723a17}\index{RPN::TokenReader@{RPN::TokenReader}!peek@{peek}}
+\index{peek@{peek}!RPN::TokenReader@{RPN::TokenReader}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_token_reader_ab3a1413ea53858ffb317d34d38723a17} 
+std\+::string RPN\+::\+Token\+Reader\+::peek (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Checks upcoming token in the stream, while keeping the current position in the stream. \begin{DoxyReturn}{Returns}
+Upcoming token in the stream. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\mbox{\hyperlink{_r_p_n_8h}{RPN.\+h}}\item 
+lib/\mbox{\hyperlink{_r_p_n_8cpp}{RPN.\+cpp}}\end{DoxyCompactItemize}
