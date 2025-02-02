@@ -102,27 +102,46 @@ const std::map<std::string, int> operatorPrecedence = {
     {"-", ADD_SUB_PREC},
 };
 
+const std::unordered_set<std::string> one_arg_operators = {
+    "sqrt",
+    "cbrt",
+    "sin",
+    "cos",
+    "tan",
+};
+
+const std::unordered_set<std::string> two_arg_operators = {
+    "^",
+    "*",
+    "/",
+    "\\",
+    "+",
+    "-"
+};
+
 bool isOperator(const std::string& op) {
     return operatorPrecedence.count(op) > 0;
 }
 
-namespace RPN {
-    const std::unordered_set<std::string> RPNSolver::one_arg_operators = {
-        "sqrt",
-        "cbrt",
-        "sin",
-        "cos",
-        "tan",
-    };
+/**
+* Checks if given token is an operator that takes
+* only 1 argument, e.g. sqrt(x).
+* @return true if is 1 argument operator.
+*/
+bool is1ArgOperator(const std::string& op) {
+    return one_arg_operators.count(op) > 0;
+}
 
-    const std::unordered_set<std::string> RPNSolver::two_arg_operators = {
-        "^",
-        "*",
-        "/",
-        "\\",
-        "+",
-        "-"
-    };
+/**
+* Checks if given token is an operator that takes
+* 2 arguments, e.g. a + b.
+* @return true if is 2 argument operator.
+*/
+bool is2ArgOperator(const std::string& op) {
+    return two_arg_operators.count(op) > 0;
+}
+
+namespace RPN {
 
     double RPNSolver::getResult(const std::string& equation) {
         TokenReader reader(equation);
@@ -154,14 +173,6 @@ namespace RPN {
          * which is equal to the result of the equation.
          */
         return  numbers.top();
-    }
-
-    bool RPNSolver::is1ArgOperator(const std::string& op) {
-        return one_arg_operators.count(op) > 0;
-    }
-
-    bool RPNSolver::is2ArgOperator(const std::string& op) {
-        return two_arg_operators.count(op) > 0;
     }
 
     TokenReader::TokenReader(const std::string& string) {
@@ -203,6 +214,13 @@ namespace RPN {
         std::string combined = "( ";
         std::string aopbStr = aopb(a, b, op);
         combined.append(aopbStr);
+        combined.append(" )");
+        return combined;
+    }
+
+    std::string NotationConverter::onlyParentheses(const std::string &a) {
+        std::string combined = "( ";
+        combined.append(a);
         combined.append(" )");
         return combined;
     }
@@ -253,7 +271,13 @@ namespace RPN {
         std::stack<std::string> infixStack;
         while (!reader.finished()) {
             std::string token = reader.next();
-            if (isOperator(token)) {
+            if (is1ArgOperator(token)) {
+                const std::string& operand = infixStack.top();
+                std::string inOperator = token;
+                inOperator.append(" ");
+                inOperator.append(onlyParentheses(operand));
+                infixStack.top() = inOperator;
+            } else if (is2ArgOperator(token)) {
                 std::string rightOperand = infixStack.top();
                 infixStack.pop();
                 std::string& leftOperand = infixStack.top();

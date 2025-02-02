@@ -48,21 +48,6 @@ namespace RPN {
          * @return Result of the RPN equation.
          */
         static double getResult(const std::string& equation);
-    private:
-        /**
-        * Checks if given token is an operator that takes
-        * only 1 argument, e.g. sqrt(x).
-        * @return true if is 1 argument operator.
-        */
-        static bool is1ArgOperator(const std::string& op);
-        /**
-        * Checks if given token is an operator that takes
-        * 2 arguments, e.g. a + b.
-        * @return true if is 2 argument operator.
-        */
-        static bool is2ArgOperator(const std::string& op);
-        static const std::unordered_set<std::string> one_arg_operators;
-        static const std::unordered_set<std::string> two_arg_operators;
     };
 
     /**
@@ -100,6 +85,7 @@ namespace RPN {
          * @return String looking as followed: a op b
          */
         static std::string aopb(const std::string &a, const std::string &b, const std::string &op);
+        static std::string onlyParentheses(const std::string &a);
     };
 
     struct NotationDeterminer {
