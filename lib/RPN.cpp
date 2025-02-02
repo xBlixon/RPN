@@ -9,139 +9,200 @@
 #include <map>
 #include "RPN.h"
 
-int sumLetters(const std::string& str) {
-    int sum=0;
-    for (const auto letter : str) {
-        sum+=letter;
-    }
-    return sum;
-}
-
-double handleDivision(const double& a, const double& b) {
-    if (b == 0) {
-        std::cerr << "[ " << a << "/" << b << " ] - illegal division (Division by zero).\n";
-        std::exit(1);
-    }
-    return a/b;
-}
-
-double handleSqrt(const double& a) {
-    if (a < 0) {
-        std::cerr << "[ sqrt(" << a << ") ] - unsupported root (Root of negative number).\n";
-        std::exit(1);
-    }
-    return std::sqrt(a);
-}
-
-double handleCbrt(const double& a) {
-    if (a < 0) {
-        std::cerr << "[ cbrt(" << a << ") ] - unsupported root (Root of negative number).\n";
-        std::exit(1);
-    }
-    return std::cbrt(a);
-}
-
-double calculate(const double& a, const double& b, const std::string& op) {
-    switch (op[0]) {
-        case '*':
-            return a*b;
-        case '/':
-            return handleDivision(a, b);
-        case '\\':
-            return handleDivision(b, a);
-        case '+':
-            return a+b;
-        case '-':
-            return a-b;
-        case '^':
-            return std::pow(a, b);
-        default:
-            return LONG_MIN;
-    }
-}
-
-double calculate(const double& a, const std::string& op) {
-    /**
-     * Integers found in cases of this switch come from
-     * the sum of ascii values of letters of the operators.
-    */
-    switch (sumLetters(op)) {
-        case 458: //sqrt
-            return handleSqrt(a);
-        case 427: //cbrt
-            return handleCbrt(a);
-        case 310: //abs
-            return std::abs(a);
-        case 330: //sin
-            return std::sin(a);
-        case 325: //cos
-            return std::cos(a);
-        case 323: //tan
-            return std::tan(a);
-        default:
-            return LONG_MIN;
-    }
-}
-
-constexpr int EXP_PREC = 100;
-constexpr int TRIG_FUN_PREC = EXP_PREC-1;
-constexpr int MULT_DIV_PREC = TRIG_FUN_PREC-1;
-constexpr int ADD_SUB_PREC = MULT_DIV_PREC-1;
-
-const std::map<std::string, int> operatorPrecedence = {
-    {"^", EXP_PREC},
-    {"sqrt", EXP_PREC},
-    {"cbrt", EXP_PREC},
-    {"sin", TRIG_FUN_PREC},
-    {"cos", TRIG_FUN_PREC},
-    {"tan", TRIG_FUN_PREC},
-    {"*", MULT_DIV_PREC},
-    {"/", MULT_DIV_PREC},
-    {"\\", MULT_DIV_PREC},
-    {"+", ADD_SUB_PREC},
-    {"-", ADD_SUB_PREC},
-};
-
-const std::unordered_set<std::string> one_arg_operators = {
-    "sqrt",
-    "cbrt",
-    "sin",
-    "cos",
-    "tan",
-};
-
-const std::unordered_set<std::string> two_arg_operators = {
-    "^",
-    "*",
-    "/",
-    "\\",
-    "+",
-    "-"
-};
-
-bool isOperator(const std::string& op) {
-    return operatorPrecedence.count(op) > 0;
-}
-
-/**
-* Checks if given token is an operator that takes
-* only 1 argument, e.g. sqrt(x).
-* @return true if is 1 argument operator.
-*/
-bool is1ArgOperator(const std::string& op) {
-    return one_arg_operators.count(op) > 0;
-}
-
-/**
-* Checks if given token is an operator that takes
-* 2 arguments, e.g. a + b.
-* @return true if is 2 argument operator.
-*/
-bool is2ArgOperator(const std::string& op) {
-    return two_arg_operators.count(op) > 0;
-}
-
 namespace RPN {
+    /**
+     * Intermediate function used by calculate for 1 parameter
+     * operators. Sums ascii values of letters to determine
+     * which switch case use.
+     * @param str
+     * @return Ascii sum of letters.
+     */
+    int sumLetters(const std::string& str) {
+        int sum=0;
+        for (const auto letter : str) {
+            sum+=letter;
+        }
+        return sum;
+    }
+
+    /**
+     * Handler for division. Throws error on divisor = 0.
+     * @param a
+     * @param b
+     * @return a/b
+     */
+    double handleDivision(const double& a, const double& b) {
+        if (b == 0) {
+            std::cerr << "[ " << a << "/" << b << " ] - illegal division (Division by zero).\n";
+            std::exit(1);
+        }
+        return a/b;
+    }
+
+    /**
+     * Calculates square roots and errors on negative numbers.
+     * @param a
+     * @return sqrt(a)
+     */
+    double handleSqrt(const double& a) {
+        if (a < 0) {
+            std::cerr << "[ sqrt(" << a << ") ] - unsupported root (Root of negative number).\n";
+            std::exit(1);
+        }
+        return std::sqrt(a);
+    }
+
+    /**
+     * Calculates cubic roots and errors on negative numbers.
+     * @param a
+     * @return cbrt(a)
+     */
+    double handleCbrt(const double& a) {
+        if (a < 0) {
+            std::cerr << "[ cbrt(" << a << ") ] - unsupported root (Root of negative number).\n";
+            std::exit(1);
+        }
+        return std::cbrt(a);
+    }
+
+    /**
+     * Given operator and operands calculates the result
+     * @param a left operand
+     * @param b right operand
+     * @param op operator
+     * @return result
+     */
+    double calculate(const double& a, const double& b, const std::string& op) {
+        switch (op[0]) {
+            case '*':
+                return a*b;
+            case '/':
+                return handleDivision(a, b);
+            case '\\':
+                return handleDivision(b, a);
+            case '+':
+                return a+b;
+            case '-':
+                return a-b;
+            case '^':
+                return std::pow(a, b);
+            default:
+                return LONG_MIN;
+        }
+    }
+
+    /**
+     * Given operator and operand calculates the result
+     * @param a operand
+     * @param op operator
+     * @return result
+     */
+    double calculate(const double& a, const std::string& op) {
+        /**
+         * Integers found in cases of this switch come from
+         * the sum of ascii values of letters of the operators.
+        */
+        switch (sumLetters(op)) {
+            case 458: //sqrt
+                return handleSqrt(a);
+            case 427: //cbrt
+                return handleCbrt(a);
+            case 310: //abs
+                return std::abs(a);
+            case 330: //sin
+                return std::sin(a);
+            case 325: //cos
+                return std::cos(a);
+            case 323: //tan
+                return std::tan(a);
+            default:
+                return LONG_MIN;
+        }
+    }
+
+    /**
+     * Exponential precedence score.
+     */
+    constexpr int EXP_PREC = 100;
+    /**
+     * Trigonometric functions precedence score.
+     */
+    constexpr int TRIG_FUN_PREC = EXP_PREC-1;
+    /**
+     * Multiplication/division precedence score.
+     */
+    constexpr int MULT_DIV_PREC = TRIG_FUN_PREC-1;
+    /**
+     * Addition/subtraction precedence score.
+     */
+    constexpr int ADD_SUB_PREC = MULT_DIV_PREC-1;
+
+    /**
+     * Mapped precedences to operators.
+     */
+    const std::map<std::string, int> operatorPrecedence = {
+        {"^", EXP_PREC},
+        {"sqrt", EXP_PREC},
+        {"cbrt", EXP_PREC},
+        {"sin", TRIG_FUN_PREC},
+        {"cos", TRIG_FUN_PREC},
+        {"tan", TRIG_FUN_PREC},
+        {"*", MULT_DIV_PREC},
+        {"/", MULT_DIV_PREC},
+        {"\\", MULT_DIV_PREC},
+        {"+", ADD_SUB_PREC},
+        {"-", ADD_SUB_PREC},
+    };
+
+    /**
+     * Operators taking 1 parameter
+     */
+    const std::unordered_set<std::string> one_arg_operators = {
+        "sqrt",
+        "cbrt",
+        "sin",
+        "cos",
+        "tan",
+    };
+
+    /**
+     * Operators taking 2 parameters
+     */
+    const std::unordered_set<std::string> two_arg_operators = {
+        "^",
+        "*",
+        "/",
+        "\\",
+        "+",
+        "-"
+    };
+
+    /**
+     * Checks if given string is a valid operator
+     * @param op
+     * @return true if string is an operator
+     */
+    bool isOperator(const std::string& op) {
+        return operatorPrecedence.count(op) > 0;
+    }
+
+    /**
+    * Checks if given token is an operator that takes
+    * only 1 argument, e.g. sqrt(x).
+    * @return true if is 1 argument operator.
+    */
+    bool is1ArgOperator(const std::string& op) {
+        return one_arg_operators.count(op) > 0;
+    }
+
+    /**
+    * Checks if given token is an operator that takes
+    * 2 arguments, e.g. a + b.
+    * @return true if is 2 argument operator.
+    */
+    bool is2ArgOperator(const std::string& op) {
+        return two_arg_operators.count(op) > 0;
+    }
 
     double RPNSolver::getResult(const std::string& equation) {
         TokenReader reader(equation);
