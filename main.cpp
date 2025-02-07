@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 #include "RPN.h"
-#define DEBUG 0
 
 /**
  * Outputs help when executable has no parameters.
@@ -57,16 +56,29 @@ void setFlags(const std::string &flags) {
     }
 }
 
+void errorInvalidEquation() {
+    std::cerr << "[ERROR]: This equation is invalid.\n";
+    exit(1);
+}
+
 void solveForOutput(const std::string &sourceEquation, std::string &outputEquation, double &result) {
+    const std::string spacedCopy = RPN::Spacer::addSpacesAroundParentheses(sourceEquation);
     std::string rpn;
     std::string infix;
-    if (RPN::NotationDeterminer::isInfix(sourceEquation)) {
-        infix = sourceEquation;
+    if (RPN::NotationDeterminer::isInfix(spacedCopy)) {
+        infix = spacedCopy;
+        if (!RPN::EquationValidator::isValidInfix(infix)) {
+            errorInvalidEquation();
+        }
         rpn = RPN::NotationConverter::infixToRPN(infix);
     } else {
-        rpn = sourceEquation;
+        rpn = spacedCopy;
+        if (!RPN::EquationValidator::isValidRPN(rpn)) {
+            errorInvalidEquation();
+        }
         infix = RPN::NotationConverter::RPNtoInfix(rpn);
     }
+
     outputEquation = isRPNOutput ? rpn : infix;
     result = RPN::RPNSolver::getResult(rpn);
 }
@@ -91,26 +103,11 @@ int main(const int argc, char* argv[]) {
         std::cerr << "No input source! - Use interactive or file input.";
         exit(1);
     }
-
-    #if DEBUG
-        std::string rpn;
-        std::string infix;
-        if (RPN::NotationDeterminer::isInfix(strEquation)) {
-            infix = std::move(strEquation);
-            rpn = RPN::NotationConverter::infixToRPN(infix);
-        } else {
-            rpn = std::move(strEquation);
-            infix = RPN::NotationConverter::RPNtoInfix(rpn);
-        }
-
-        double result = RPN::RPNSolver::getResult(rpn);
-        std::cout << "RPN representation  : " << rpn    << std::endl;
-        std::cout << "Infix representation: " << infix  << std::endl;
-        std::cout << "Equation result     : " << result << std::endl;
-    #else
         double result;
         std::string outputEquation;
         solveForOutput(strEquation, outputEquation, result);
+        outputEquation = RPN::Spacer::removeSpacesAroundParentheses(outputEquation);
+        outputEquation = RPN::Spacer::mergeSpaces(outputEquation);
         std::cout << outputEquation << " = " <<result<<std::endl;
         if (outputFilePos != -1) {
             std::ofstream outputFile(argv[outputFilePos+1], std::ofstream::out);
@@ -118,6 +115,5 @@ int main(const int argc, char* argv[]) {
             outputFile << " = ";
             outputFile << result;
         }
-    #endif
     return 0;
 }
