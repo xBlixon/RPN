@@ -123,6 +123,11 @@ namespace RPN {
         * Removes spaces around each operator in the equation.
         */
         static std::string removeSpacesAroundOperators(const std::string& input);
+
+        /**
+        * Combines multiple spaces into single space character.
+        */
+        static std::string mergeSpaces(const std::string& input);
     };
 
     struct EquationValidator {

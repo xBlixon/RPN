@@ -443,6 +443,11 @@ namespace RPN {
         return result;
     }
 
+    std::string Spacer::mergeSpaces(const std::string &input) {
+        return std::regex_replace(input, std::regex("\\s+"), " ");
+    }
+
+
     bool EquationValidator::is_number(const std::string &str) {
         std::istringstream iss(str);
         double d;
@@ -455,12 +460,14 @@ namespace RPN {
 
         while (!reader.finished()) {
             std::string token = reader.next();
+            if (token.empty()) break; //End of equation
+
             if (is1ArgOperator(token)) {
                 if (operandStack.size() < 1) return false;
                 // Consumes operand and returns to the stack
                 // 1 element. Therefore, stack count stays the same.
             }
-            else if (is1ArgOperator(token)) {
+            else if (is2ArgOperator(token)) {
                 if (operandStack.size() < 2) return false;
                 operandStack.pop();
                 // Consumes 1 more element and returns 1 element back.
@@ -489,6 +496,7 @@ namespace RPN {
 
         while (!reader.finished()) {
             std::string token = reader.next();
+            if (token.empty()) break; //End of equation
 
             if (token == "(") {
                 parentheses.push(token);
