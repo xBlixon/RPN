@@ -104,14 +104,24 @@ namespace RPN {
     struct Spacer {
         /**
         * Prepares equation to be fed into NotationConverter.
-        * Key idea is that
+        * Key idea is that each token in the converter needs to be
+        * separated by a space, that is operands, operators, parentheses.
         */
         static std::string addSpacesAroundParentheses(const std::string& input);
 
+        /**
+        * Removes all spaces around parentheses.
+        */
         static std::string removeSpacesAroundParentheses(const std::string& input);
 
+        /**
+        * Adds spaces around each operator in the equation.
+        */
         static std::string addSpacesAroundOperators(const std::string& input);
 
+        /**
+        * Removes spaces around each operator in the equation.
+        */
         static std::string removeSpacesAroundOperators(const std::string& input);
     };
 }
