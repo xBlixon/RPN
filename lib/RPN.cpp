@@ -443,8 +443,8 @@ namespace RPN {
         return result;
     }
 
-    bool EquationValidator::is_number(const std::string &s) {
-        std::istringstream iss(s);
+    bool EquationValidator::is_number(const std::string &str) {
+        std::istringstream iss(str);
         double d;
         return iss >> std::noskipws >> d && iss.eof();
     }

@@ -126,9 +126,21 @@ namespace RPN {
     };
 
     struct EquationValidator {
+        /**
+        * Validates RPN equation.
+        * @param equation RPN equation
+        */
         static bool isValidRPN(const std::string& equation);
+        /**
+        * Validates Infix equation.
+        * @param equation Infix equation
+        */
         static bool isValidInfix(const std::string& equation);
     private:
-        static bool is_number(const std::string& s);
+        /**
+        * Checks if given string is a number.
+        * @param str String to be checked of being a number
+        */
+        static bool is_number(const std::string& str);
     };
 }
