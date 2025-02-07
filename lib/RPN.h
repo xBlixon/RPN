@@ -124,4 +124,11 @@ namespace RPN {
         */
         static std::string removeSpacesAroundOperators(const std::string& input);
     };
+
+    struct EquationValidator {
+        static bool isValidRPN(const std::string& equation);
+        static bool isValidInfix(const std::string& equation);
+    private:
+        static bool is_number(const std::string& s);
+    };
 }

@@ -443,6 +443,81 @@ namespace RPN {
         return result;
     }
 
+    bool EquationValidator::is_number(const std::string &s) {
+        std::istringstream iss(s);
+        double d;
+        return iss >> std::noskipws >> d && iss.eof();
+    }
+
+    bool EquationValidator::isValidRPN(const std::string &equation) {
+        std::stack<int> operandStack;
+        TokenReader reader(equation);
+
+        while (!reader.finished()) {
+            std::string token = reader.next();
+            if (is1ArgOperator(token)) {
+                if (operandStack.size() < 1) return false;
+                // Consumes operand and returns to the stack
+                // 1 element. Therefore, stack count stays the same.
+            }
+            else if (is1ArgOperator(token)) {
+                if (operandStack.size() < 2) return false;
+                operandStack.pop();
+                // Consumes 1 more element and returns 1 element back.
+                // Therefore, 1 pop is sufficient.
+            }
+            else {
+                try {
+                    std::stod(token);
+                    operandStack.push(1);
+                }
+                catch (...) {
+                    // Invalid token
+                    return false;
+                }
+            }
+        }
+
+        return operandStack.size() == 1;
+    }
+
+    bool EquationValidator::isValidInfix(const std::string& equation) {
+        TokenReader reader(equation);
+        std::stack<std::string> parentheses;
+        int operandCount = 0;
+        int operatorCount = 0;
+
+        while (!reader.finished()) {
+            std::string token = reader.next();
+
+            if (token == "(") {
+                parentheses.push(token);
+            } else if (token == ")") {
+                if (parentheses.empty() || parentheses.top() != "(") {
+                    return false; // Unbalanced parentheses
+                }
+                parentheses.pop();
+            } else if (is2ArgOperator(token)) {
+                operatorCount++;
+            } else if (is_number(token)) {
+                operandCount++;
+            } else if (!is1ArgOperator(token)) {
+                return false; // Invalid token
+            }
+        }
+
+        // Check if parentheses are balanced
+        if (!parentheses.empty()) {
+            return false;
+        }
+
+        if (operandCount != operatorCount + 1) {
+            return false;
+        }
+
+        return true;
+    }
+
 }
 
 
