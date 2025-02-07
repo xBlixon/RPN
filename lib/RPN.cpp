@@ -7,6 +7,7 @@
 #include <climits>
 #include <cmath>
 #include <map>
+#include <regex>
 #include "RPN.h"
 
 namespace RPN {
@@ -375,6 +376,71 @@ namespace RPN {
 
     bool NotationDeterminer::isInfix(const std::string &equation) {
         return !isRPN(equation);
+    }
+
+    std::string Spacer::addSpacesAroundParentheses(const std::string& input) {
+        std::string result;
+        for (const char ch : input) {
+            if (ch == '(' || ch == ')') {
+                result += ' ';
+                result += ch;
+                result += ' ';
+            } else {
+                result += ch;
+            }
+        }
+        return result;
+    }
+
+    std::string Spacer::removeSpacesAroundParentheses(const std::string &input) {
+        std::string result = input;
+
+        // Remove all spaces between '('
+        result = std::regex_replace(result, std::regex(R"(\s*\(\s*)"), "(");
+
+        // Remove all spaces between ')'
+        result = std::regex_replace(result, std::regex(R"(\s*\)\s*)"), ")");
+
+        return result;
+    }
+
+    std::string Spacer::addSpacesAroundOperators(const std::string &input) {
+        std::string result = input;
+
+        for (const auto& entry : operatorPrecedence) {
+            const std::string& key = entry.first;
+            std::string pattern;
+            // Escape math operators that are regex tokens
+            if (key == "+" || key == "*" || key == "\\" || key == "^") {
+                pattern = "\\" + key;
+            } else {
+                pattern = key;
+            }
+            std::string replacement = " " + key + " ";
+            result = std::regex_replace(result, std::regex(pattern), replacement);
+        }
+
+        return result;
+    }
+
+    std::string Spacer::removeSpacesAroundOperators(const std::string& input) {
+        std::string result = input;
+
+        for (const auto& entry : operatorPrecedence) {
+            const std::string& key = entry.first;
+            std::string pattern;
+
+            // Escape math operators that are regex tokens
+            if (key == "+" || key == "*" || key == "\\" || key == "^") {
+                pattern = "\\s*\\" + key + "\\s*";
+            } else {
+                pattern = "\\s*" + key + "\\s*";
+            }
+
+            result = std::regex_replace(result, std::regex(pattern), key);
+        }
+
+        return result;
     }
 
 }

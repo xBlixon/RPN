@@ -100,4 +100,18 @@ namespace RPN {
          */
         static bool isInfix(const std::string& equation);
     };
+
+    struct Spacer {
+        /**
+        * Prepares equation to be fed into NotationConverter.
+        * Key idea is that
+        */
+        static std::string addSpacesAroundParentheses(const std::string& input);
+
+        static std::string removeSpacesAroundParentheses(const std::string& input);
+
+        static std::string addSpacesAroundOperators(const std::string& input);
+
+        static std::string removeSpacesAroundOperators(const std::string& input);
+    };
 }
