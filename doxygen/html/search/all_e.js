@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['setflags_0',['setFlags',['../main_8cpp.html#a575fda94d8bcc88ec40ed12490f51c55',1,'main.cpp']]],
-  ['solveforoutput_1',['solveForOutput',['../main_8cpp.html#a5ac199b66a045d3d0a0e38f137834483',1,'main.cpp']]],
-  ['spacer_2',['Spacer',['../struct_r_p_n_1_1_spacer.html',1,'RPN']]],
-  ['stringify_3',['STRINGIFY',['../3_830_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCCompilerId.c'],['../3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCXXCompilerId.cpp'],['../3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCCompilerId.c'],['../3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY:&#160;CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper_4',['STRINGIFY_HELPER',['../3_830_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCCompilerId.c'],['../3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCXXCompilerId.cpp'],['../3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCCompilerId.c'],['../3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER:&#160;CMakeCXXCompilerId.cpp']]],
-  ['sumletters_5',['sumLetters',['../namespace_r_p_n.html#a3a36e2730c954cfb258f13773efe6a57',1,'RPN']]]
+  ['of_20this_20project_20is_20to_20make_20a_20strong_20working_20postfix_20rpn_20infix_20notation_20calculator_20strong_20that_20supports_20following_20functionalities_3a_0',['The goal of this project is to make a &lt;strong&gt;working Postfix (RPN)/Infix notation calculator&lt;/strong&gt; that supports following functionalities:',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
+  ['one_5farg_5foperators_1',['one_arg_operators',['../namespace_r_p_n.html#a1a4778839c205c8f3cd1988fa7070c72',1,'RPN']]],
+  ['operations_20such_20as_3a_2',['The calculator does handle basic illegal operations such as:',['../md__r_e_a_d_m_e.html#autotoc_md4',1,'']]],
+  ['operatorprecedence_3',['operatorPrecedence',['../namespace_r_p_n.html#ac9384bfd0591693609addd50100f157f',1,'RPN']]],
+  ['outputfilepos_4',['outputFilePos',['../main_8cpp.html#a835c0a8488df6528e41b04b018b46d43',1,'main.cpp']]]
 ];

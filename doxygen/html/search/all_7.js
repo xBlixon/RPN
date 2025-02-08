@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['handlecbrt_0',['handleCbrt',['../namespace_r_p_n.html#a65b288526c79fa6aacfabe23b0f87245',1,'RPN']]],
-  ['handledivision_1',['handleDivision',['../namespace_r_p_n.html#a30f0dc82e654f7488605195eab2ffbdd',1,'RPN']]],
-  ['handlesqrt_2',['handleSqrt',['../namespace_r_p_n.html#a083ba7675db30910692cf44242dac9bb',1,'RPN']]],
-  ['help_3',['help',['../main_8cpp.html#a97ee70a8770dc30d06c744b24eb2fcfc',1,'main.cpp']]],
-  ['hex_4',['HEX',['../3_830_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX:&#160;CMakeCCompilerId.c'],['../3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX:&#160;CMakeCXXCompilerId.cpp'],['../3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX:&#160;CMakeCCompilerId.c'],['../3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX:&#160;CMakeCXXCompilerId.cpp']]]
+  ['finished_0',['finished',['../struct_r_p_n_1_1_token_reader.html#a34616db4c33e83c04951ab714f464f93',1,'RPN::TokenReader']]],
+  ['flags_1',['Flags',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
+  ['following_20functionalities_3a_2',['The goal of this project is to make a &lt;strong&gt;working Postfix (RPN)/Infix notation calculator&lt;/strong&gt; that supports following functionalities:',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
+  ['functionalities_3a_3',['The goal of this project is to make a &lt;strong&gt;working Postfix (RPN)/Infix notation calculator&lt;/strong&gt; that supports following functionalities:',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]]
 ];

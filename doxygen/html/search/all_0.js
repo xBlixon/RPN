@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5fhas_5finclude_0',['__has_include',['../3_830_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCCompilerId.c'],['../3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCXXCompilerId.cpp'],['../3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCCompilerId.c'],['../3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCXXCompilerId.cpp']]]
+  ['2025_20xawier_20słupik_20licensed_20under_20mit_20license_0',['&amp;copy; 2025 Xawier Słupik - Licensed under MIT License',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]]
 ];

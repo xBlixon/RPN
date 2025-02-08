@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "_acdefghimnoprst",
+  0: "2_abcdefghilmnoprstuwx",
   1: "enrst",
   2: "r",
   3: "cmr",
   4: "acefghimnprst",
   5: "aeimot",
-  6: "_acdhps"
+  6: "_acdhps",
+  7: "cnpr"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "defines"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Files",
   4: "Functions",
   5: "Variables",
-  6: "Macros"
+  6: "Macros",
+  7: "Pages"
 };
 

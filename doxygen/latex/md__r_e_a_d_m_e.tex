@@ -1,0 +1,89 @@
+\chapter{Reverse Polish Notation Calculator}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Reverse Polish Notation Calculator@{Reverse Polish Notation Calculator}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+
+
+This is a final project for Fundamentals of Computer Programming course at the \href{https://www.polsl.pl/en/}{\texttt{ Silesian University of Technology}} for the 1st semester 2024/2025 of Informatics.
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{\texorpdfstring{The goal of this project is to make a {\bfseries{working Postfix (RPN)/\+Infix notation calculator}} that supports following functionalities\+:}{The goal of this project is to make a {\bfseries{working Postfix (RPN)/\+Infix notation calculator}} that supports following functionalities\+:}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Addition/\+Subtraction ({\bfseries{a+b}} {\bfseries{a-\/b}})
+\item Multiplication/\+Division ({\bfseries{a\texorpdfstring{$\ast$}{*}b}} {\bfseries{a/b}} or \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}a{\bfseries{}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item Parentheses {\bfseries{( )}}
+\item Exponential operators
+\begin{DoxyItemize}
+\item Square roots {\bfseries{sqrt(a)}}
+\item Cubic roots {\bfseries{cbrt(a)}}
+\item Powers {\bfseries{a\texorpdfstring{$^\wedge$}{\string^}b}}
+\end{DoxyItemize}
+\item Trigonometric functions
+\begin{DoxyItemize}
+\item sine {\bfseries{sin(a)}}
+\item cosine {\bfseries{cos(a)}}
+\item tangent {\bfseries{tan(a)}}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{The calculator does handle basic illegal operations such as\+:}{The calculator does handle basic illegal operations such as\+:}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Division by zero
+\item Roots of negative numbers (complex numbers which were not required to implement)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{md__r_e_a_d_m_e_autotoc_md6}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{Flags}{Flags}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/i} Input file -\/ relative path to the input file (one-\/liner).
+\item {\ttfamily -\/o} Output file -\/ relative path to where the output should be generated.
+\item {\ttfamily -\/c} Interactive mode -\/ Prompts user for the equation in the CLI (Priority over {\ttfamily -\/i} flag)
+\item {\ttfamily -\/r} Output equation -\/ If this flag is present the output will be shown as {\bfseries{Postix = result}}, otherwise {\bfseries{Infix = result}} regardless of equation on the input.
+\end{DoxyItemize}
+
+Order in which flags {\ttfamily -\/i} and {\ttfamily -\/o} are passed dictate the order in which their respective paths must be passed. Examples\+: {\ttfamily ./\+RPN -\/io input.\+txt output.\+txt} and {\ttfamily ./\+RPN -\/oi output.\+txt input.\+txt}
+
+Equations passed on the input can be either Infix or Postfix {\bfseries{with the only requirement for it to have spaces between operators and operands!!!}} The reason for it is that I couldn\textquotesingle{}t find in time a reliable solution to separating operators from negative numbers (a+-\/b) where b is negative (-\/b).\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{Example usage\+:}{Example usage\+:}}\label{md__r_e_a_d_m_e_autotoc_md8}
+For Infix\+:
+\begin{DoxyItemize}
+\item {\ttfamily ./\+RPN -\/c} with input {\ttfamily sqrt(25) \texorpdfstring{$\ast$}{*} (5 -\/ 2)} will output\+: {\ttfamily sqrt(25)\texorpdfstring{$\ast$}{*}(5 -\/ 2) = 15}
+\item {\ttfamily ./\+RPN -\/cr} with input {\ttfamily sqrt(25) \texorpdfstring{$\ast$}{*} (5 -\/ 2)} will output\+: {\ttfamily 25 sqrt 5 2 -\/ \texorpdfstring{$\ast$}{*} = 15}
+\end{DoxyItemize}
+
+For Postfix (\doxylink{namespace_r_p_n}{RPN})\+:
+\begin{DoxyItemize}
+\item {\ttfamily ./\+RPN -\/c} with input {\ttfamily 0 cos 2 / 2 \texorpdfstring{$^\wedge$}{\string^}} will output\+: {\ttfamily (cos(0)/ 2)\texorpdfstring{$^\wedge$}{\string^} 2 = 0.\+25}
+\item {\ttfamily ./\+RPN -\/cr} with input {\ttfamily 0 cos 2 / 2 \texorpdfstring{$^\wedge$}{\string^}} will output\+: {\ttfamily 0 cos 2 / 2 \texorpdfstring{$^\wedge$}{\string^} = 0.\+25}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{Under the hood}{Under the hood}}\label{md__r_e_a_d_m_e_autotoc_md10}
+This section will explain steps required to solve equations.
+\begin{DoxyEnumerate}
+\item Check for flags
+\begin{DoxyItemize}
+\item If no flags = output help and exit.
+\item If flags present, read them and assign their control values.
+\end{DoxyItemize}
+\item Determine whether input goes from Interactive mode or input file.
+\item Get the input.
+\item Add extra spaces between paretheses, since Notation\+Converter for \doxylink{namespace_r_p_n}{RPN} doesn\textquotesingle{}t understand them in functions such as tan(), sqrt(), etc.
+\item Determine in which notation is the equation written.
+\item Validate if the equation is valid that i.\+e. has matching operators to operands and not more nor less.
+\item Using RPNSolver solve the equation.
+\begin{DoxyItemize}
+\item If equation is in Infix, convert to \doxylink{namespace_r_p_n}{RPN} and solve \doxylink{namespace_r_p_n}{RPN} version.
+\item If equation is in Postfix, solve directly.
+\end{DoxyItemize}
+\item Having the result check if the {\ttfamily -\/r} flag is present and return correct equation representation along with the result.
+\item Output the result in the CLI
+\item If {\ttfamily -\/o} flag is present, also write the same result as in the CLI into the file.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{\copyright{} 2025 Xawier Słupik -\/ Licensed under MIT License}{\copyright{} 2025 Xawier Słupik -\/ Licensed under MIT License}}\label{md__r_e_a_d_m_e_autotoc_md12}

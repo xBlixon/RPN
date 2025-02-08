@@ -25,6 +25,15 @@
 var NAVTREE =
 [
   [ "RPN", "index.html", [
+    [ "Reverse Polish Notation Calculator", "md__r_e_a_d_m_e.html", [
+      [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md6", [
+        [ "The goal of this project is to make a working Postfix (RPN)/Infix notation calculator that supports f...", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+        [ "The calculator does handle basic illegal operations such as:", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+        [ "Flags", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+        [ "Example usage:", "md__r_e_a_d_m_e.html#autotoc_md8", null ]
+      ] ],
+      [ "Under the hood", "md__r_e_a_d_m_e.html#autotoc_md10", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

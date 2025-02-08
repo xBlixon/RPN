@@ -364,87 +364,90 @@
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::regex\_replace(input,\ std::regex(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)s+"{}}),\ \textcolor{stringliteral}{"{}\ "{}});}
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00448}00448\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00449}00449\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00450}00450\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00451}00451\ \ \ \ \ \textcolor{keywordtype}{bool}\ EquationValidator::is\_number(\textcolor{keyword}{const}\ std::string\ \&str)\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ std::istringstream\ iss(str);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iss\ >>\ std::noskipws\ >>\ d\ \&\&\ iss.eof();}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00455}00455\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00456}00456\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00457}\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a796acc8a79f88a5391a3fbdf4fbf3004}{00457}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a796acc8a79f88a5391a3fbdf4fbf3004}{EquationValidator::isValidRPN}}(\textcolor{keyword}{const}\ std::string\ \&equation)\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ std::stack<int>\ operandStack;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{TokenReader}}\ reader(equation);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00460}00460\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}}())\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ token\ =\ reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}}();}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token.empty())\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ equation}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00464}00464\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{is1ArgOperator}}(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandStack.size()\ <\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Consumes\ operand\ and\ returns\ to\ the\ stack}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ element.\ Therefore,\ stack\ count\ stays\ the\ same.}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{is2ArgOperator}}(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandStack.size()\ <\ 2)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandStack.pop();}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Consumes\ 1\ more\ element\ and\ returns\ 1\ element\ back.}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Therefore,\ 1\ pop\ is\ sufficient.}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stod(token);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandStack.push(1);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (...)\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ token}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00487}00487\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ operandStack.size()\ ==\ 1;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00489}00489\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00450}\mbox{\hyperlink{struct_r_p_n_1_1_spacer_a542eb289397bbc53d1a4ef0e5b924c87}{00450}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a542eb289397bbc53d1a4ef0e5b924c87}{Spacer::removeTrailingSpaces}}(\textcolor{keyword}{const}\ std::string\ \&input)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::regex\_replace(input,\ std::regex(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)s+\$"{}}),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00452}00452\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00454}00454\ \ \ \ \ \textcolor{keywordtype}{bool}\ EquationValidator::is\_number(\textcolor{keyword}{const}\ std::string\ \&str)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ std::istringstream\ iss(str);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iss\ >>\ std::noskipws\ >>\ d\ \&\&\ iss.eof();}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00458}00458\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00460}\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a796acc8a79f88a5391a3fbdf4fbf3004}{00460}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a796acc8a79f88a5391a3fbdf4fbf3004}{EquationValidator::isValidRPN}}(\textcolor{keyword}{const}\ std::string\ \&equation)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ std::stack<int>\ operandStack;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{TokenReader}}\ reader(equation);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ token\ =\ reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}}();}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token.empty())\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ equation}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00467}00467\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{is1ArgOperator}}(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandStack.size()\ <\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Consumes\ operand\ and\ returns\ to\ the\ stack}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ element.\ Therefore,\ stack\ count\ stays\ the\ same.}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{is2ArgOperator}}(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandStack.size()\ <\ 2)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandStack.pop();}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Consumes\ 1\ more\ element\ and\ returns\ 1\ element\ back.}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Therefore,\ 1\ pop\ is\ sufficient.}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stod(token);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandStack.push(1);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invalid\ token}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00490}00490\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00491}\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a5807a6d247f88a48daf441a13fb34a5a}{00491}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a5807a6d247f88a48daf441a13fb34a5a}{EquationValidator::isValidInfix}}(\textcolor{keyword}{const}\ std::string\&\ equation)\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00492}00492\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{TokenReader}}\ reader(equation);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ std::stack<std::string>\ parentheses;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ operandCount\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ operatorCount\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00496}00496\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}}())\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ token\ =\ reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}}();}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token.empty())\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ equation}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00500}00500\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ ==\ \textcolor{stringliteral}{"{}("{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentheses.push(token);}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (token\ ==\ \textcolor{stringliteral}{"{})"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentheses.empty()\ ||\ parentheses.top()\ !=\ \textcolor{stringliteral}{"{}("{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Unbalanced\ parentheses}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentheses.pop();}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{is2ArgOperator}}(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operatorCount++;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_number(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandCount++;}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{is1ArgOperator}}(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Invalid\ token}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00516}00516\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00517}00517\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ parentheses\ are\ balanced}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parentheses.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00521}00521\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandCount\ !=\ operatorCount\ +\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00525}00525\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00527}00527\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ operandStack.size()\ ==\ 1;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00492}00492\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00494}\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a5807a6d247f88a48daf441a13fb34a5a}{00494}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a5807a6d247f88a48daf441a13fb34a5a}{EquationValidator::isValidInfix}}(\textcolor{keyword}{const}\ std::string\&\ equation)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{TokenReader}}\ reader(equation);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ std::stack<std::string>\ parentheses;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ operandCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ operatorCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a34616db4c33e83c04951ab714f464f93}{finished}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ token\ =\ reader.\mbox{\hyperlink{struct_r_p_n_1_1_token_reader_a5c26a41dfdca5e800fcd7f83053554c2}{next}}();}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token.empty())\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ equation}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ ==\ \textcolor{stringliteral}{"{}("{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentheses.push(token);}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (token\ ==\ \textcolor{stringliteral}{"{})"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentheses.empty()\ ||\ parentheses.top()\ !=\ \textcolor{stringliteral}{"{}("{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Unbalanced\ parentheses}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parentheses.pop();}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}{is2ArgOperator}}(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operatorCount++;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (is\_number(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ operandCount++;}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}{is1ArgOperator}}(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Invalid\ token}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00519}00519\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ parentheses\ are\ balanced}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parentheses.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operandCount\ !=\ operatorCount\ +\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00528}00528\ }
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00529}00529\ \}}
-\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00530}00530\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00530}00530\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00531}00531\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00532}00532\ \}}
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{_r_p_n_8cpp_source_l00534}00534\ }
 
 \end{DoxyCode}

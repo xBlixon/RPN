@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.2)  8 FEB 2025 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.2)  8 FEB 2025 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,6 +882,18 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 23
 (C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 230.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 230.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
+30.
+
+(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 230.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 230.
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
@@ -890,12 +902,7 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 23
 (C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 230.
 
-
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 230.
 [1]
 
 [2]
@@ -910,36 +917,49 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 233.
-
+ (md__r_e_a_d_m_e.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 235.
+(Font)              scaled to size 18.66588pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 235.
+(Font)              scaled to size 18.66588pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 235.
-(namespaces.tex
+(Font)              scaled to size 22.39185pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-)
+(Font)              scaled to size 10.79993pt on input line 10.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 10.
+
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 39.
+
 
 [1
 
 ]
+LaTeX Font Info:    Font shape `TS1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 89.
 
-[2
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 89.
+
+)
+
+[2]
+Chapter 2.
+(namespaces.tex)
+
+[3
 
 ]
-Chapter 2.
-(annotated.tex)
-
-[3]
 
 [4
 
 ]
 Chapter 3.
-(files.tex)
+(annotated.tex)
 
 [5]
 
@@ -947,24 +967,22 @@ Chapter 3.
 
 ]
 Chapter 4.
-(namespace_r_p_n.tex
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
-.
+(files.tex)
 
-(C:\Users\Blixon\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
-LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 58.
+[7]
+
+[8
+
+]
+Chapter 5.
+(namespace_r_p_n.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 7.19995pt on input line 61.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 63.
 
 
-[7]
+[9]
 Underfull \hbox (badness 10000) detected at line 74
 [][][]
  []
@@ -975,8 +993,6 @@ Underfull \hbox (badness 10000) detected at line 94
  []
 
 
-
-[8]
 Underfull \hbox (badness 10000) detected at line 112
 [][][]
  []
@@ -987,6 +1003,8 @@ Underfull \hbox (badness 10000) detected at line 132
  []
 
 
+
+[10]
 Underfull \hbox (badness 10000) detected at line 150
 [][][]
  []
@@ -997,8 +1015,6 @@ Underfull \hbox (badness 10000) detected at line 163
  []
 
 
-
-[9]
 Underfull \hbox (badness 10000) detected at line 176
 [][][]
  []
@@ -1010,34 +1026,37 @@ Underfull \hbox (badness 10000) detected at line 194
 
 
 
-[10]
+[11]
 Underfull \hbox (badness 10000) detected at line 212
 [][][]
  []
 
 
 
-[11])
+[12])
 
-[12]
-Chapter 5.
-(struct_r_p_n_1_1_equation_validator.tex
+[13]
 
-[13
+[14
 
-]) (struct_r_p_n_1_1_notation_converter.tex
+]
+Chapter 6.
+(struct_r_p_n_1_1_equation_validator.tex)
+(struct_r_p_n_1_1_notation_converter.tex
+
+[15]
 Underfull \hbox (badness 10000) detected at line 35
 [][][]
  []
 
 
-
-[14]
 Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
 ) (struct_r_p_n_1_1_notation_determiner.tex
+
+[16]
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -1048,24 +1067,22 @@ Underfull \hbox (badness 10000) detected at line 43
  []
 
 ) (struct_r_p_n_1_1_r_p_n_solver.tex
-
-[15]
 Underfull \hbox (badness 10000) detected at line 28
 [][][]
  []
 
 ) (struct_r_p_n_1_1_spacer.tex
 
-[16]
+[17]
 
-[17]) (struct_r_p_n_1_1_token_reader.tex
-
-[18]
+[18]) (struct_r_p_n_1_1_token_reader.tex
 Underfull \hbox (badness 10000) detected at line 54
 [][][]
  []
 
 
+
+[19]
 Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
@@ -1082,15 +1099,13 @@ Underfull \hbox (badness 10000) detected at line 93
 
 )
 
-[19]
-
-[20
-
-]
-Chapter 6.
+[20]
+Chapter 7.
 (3_830_85_2_compiler_id_c_2_c_make_c_compiler_id_8c.tex
 
-[21]
+[21
+
+]
 
 [22]
 
@@ -1114,17 +1129,17 @@ Chapter 6.
 
 [32]
 
-[33]
+[33]) (3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.tex
 
-[34]) (3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c.tex
+[34]
 
 [35]
 
-[36]
+[36]) (3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c_source.tex
 
 [37]
 
-[38]) (3_831_80_2_compiler_id_c_2_c_make_c_compiler_id_8c_source.tex
+[38]
 
 [39]
 
@@ -1140,21 +1155,21 @@ Chapter 6.
 
 [45]
 
-[46]
+[46]) (3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.tex
 
 [47]
 
 [48]
 
-[49]) (3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.tex
+[49]
 
-[50]
+[50]) (3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source.tex
 
 [51]
 
 [52]
 
-[53]) (3_830_85_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source.tex
+[53]
 
 [54]
 
@@ -1168,7 +1183,7 @@ Chapter 6.
 
 [59]
 
-[60]
+[60]) (3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.tex
 
 [61]
 
@@ -1176,7 +1191,7 @@ Chapter 6.
 
 [63]
 
-[64]) (3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.tex
+[64]) (3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source.tex
 
 [65]
 
@@ -1184,7 +1199,7 @@ Chapter 6.
 
 [67]
 
-[68]) (3_831_80_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source.tex
+[68]
 
 [69]
 
@@ -1196,50 +1211,44 @@ Chapter 6.
 
 [73]
 
-[74]
+[74]) (main_8cpp_8obj_8d.tex) (main_8cpp_8obj_8d_source.tex
 
 [75]
 
-[76]
+[76]) (_r_p_n_8cpp_8obj_8d.tex) (_r_p_n_8cpp_8obj_8d_source.tex
 
 [77]
 
-[78]
+[78]) (_r_p_n_8cpp.tex) (_r_p_n_8cpp_source.tex
 
-[79]) (main_8cpp_8obj_8d.tex) (main_8cpp_8obj_8d_source.tex
+[79]
 
 [80]
 
-[81]) (_r_p_n_8cpp_8obj_8d.tex) (_r_p_n_8cpp_8obj_8d_source.tex
+[81]
 
 [82]
 
-[83]) (_r_p_n_8cpp.tex) (_r_p_n_8cpp_source.tex
+[83]
 
-[84]
+[84]) (_r_p_n_8h.tex) (_r_p_n_8h_source.tex
 
-[85]
+[85]) (main_8cpp.tex
 
 [86]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 86.
+) (main_8cpp_source.tex
 
 [87]
 
-[88]
+[88]) (_r_e_a_d_m_e_8md.tex)
 
-[89]) (_r_p_n_8h.tex) (_r_p_n_8h_source.tex
+[89]
 
-[90]) (main_8cpp.tex
+[90
 
-[91]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 86.
-
-
-[92]) (main_8cpp_source.tex
-
-[93])
-
-[94] (refman.ind
+] (refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
 
@@ -1266,19 +1275,18 @@ Overfull \hbox (50.40594pt too wide) in paragraph at lines 27--29
 
 
 
-[95
-
+[91
 
 
 ]
 
 
 
-[96]
+[92]
 
 
 
-[97
+[93
 
 ]) (refman.aux)
  ***********
@@ -1286,16 +1294,16 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 722FA2AF6DC63850EDE1C5664A3798E4;36636.
+(rerunfilecheck)             Checksum: 6E58AAF065BBF734DD6891B38E2DB327;39457.
  ) 
 Here is how much of TeX's memory you used:
- 23610 strings out of 473529
- 606157 string characters out of 5714290
- 773694 words of memory out of 5000000
- 41416 multiletter control sequences out of 15000+600000
- 608884 words of font info for 102 fonts, out of 8000000 for 9000
+ 23695 strings out of 473529
+ 608121 string characters out of 5714290
+ 777376 words of memory out of 5000000
+ 41457 multiletter control sequences out of 15000+600000
+ 609196 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,16n,117p,794b,749s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,829b,747s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Blixon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmmi10.pfb><C:/Users/Blixon/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmmi8.pfb><C:/Users/Blixon/AppData/Local/Programs/MiKTeX/fonts/type1
@@ -1309,9 +1317,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Blixon
 /AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Users/B
 lixon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Use
 rs/Blixon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (105 pages, 1597857 bytes).
+Output written on refman.pdf (101 pages, 1615808 bytes).
 PDF statistics:
- 8301 PDF objects out of 8907 (max. 8388607)
- 5040 named destinations out of 5155 (max. 500000)
- 1489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 8395 PDF objects out of 8907 (max. 8388607)
+ 5077 named destinations out of 5155 (max. 500000)
+ 1569 words of extra memory for PDF output out of 10000 (max. 10000000)
 
