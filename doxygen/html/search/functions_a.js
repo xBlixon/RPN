@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tokenreader_0',['TokenReader',['../struct_r_p_n_1_1_token_reader.html#a1d651714a7de1ee1a3fdf54f6c2a4f65',1,'RPN::TokenReader']]]
+  ['removespacesaroundoperators_0',['removeSpacesAroundOperators',['../struct_r_p_n_1_1_spacer.html#a48df4d592bd1f1221e5d13594c4b1aaa',1,'RPN::Spacer']]],
+  ['removespacesaroundparentheses_1',['removeSpacesAroundParentheses',['../struct_r_p_n_1_1_spacer.html#af4aebfeea9b8e7272078a649e76f81be',1,'RPN::Spacer']]],
+  ['rpntoinfix_2',['RPNtoInfix',['../struct_r_p_n_1_1_notation_converter.html#ae6a9e2950406c24d83680876393392af',1,'RPN::NotationConverter']]]
 ];

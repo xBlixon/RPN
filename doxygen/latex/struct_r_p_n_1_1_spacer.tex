@@ -1,0 +1,85 @@
+\doxysection{RPN\+::Spacer Struct Reference}
+\hypertarget{struct_r_p_n_1_1_spacer}{}\label{struct_r_p_n_1_1_spacer}\index{RPN::Spacer@{RPN::Spacer}}
+
+
+{\ttfamily \#include $<$RPN.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a6e58d95311b1d9a64d58e11d0c537d15}{add\+Spaces\+Around\+Parentheses}} (const std\+::string \&input)
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_spacer_af4aebfeea9b8e7272078a649e76f81be}{remove\+Spaces\+Around\+Parentheses}} (const std\+::string \&input)
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_spacer_afb018de1f11cd5c59c7f08ee2eb90e8a}{add\+Spaces\+Around\+Operators}} (const std\+::string \&input)
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a48df4d592bd1f1221e5d13594c4b1aaa}{remove\+Spaces\+Around\+Operators}} (const std\+::string \&input)
+\item 
+static std\+::string \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a6f2961141f78438ed216bb465a7f205a}{merge\+Spaces}} (const std\+::string \&input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8h_source_l00104}{104}} of file \mbox{\hyperlink{_r_p_n_8h_source}{RPN.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_r_p_n_1_1_spacer_afb018de1f11cd5c59c7f08ee2eb90e8a}\index{RPN::Spacer@{RPN::Spacer}!addSpacesAroundOperators@{addSpacesAroundOperators}}
+\index{addSpacesAroundOperators@{addSpacesAroundOperators}!RPN::Spacer@{RPN::Spacer}}
+\doxysubsubsection{\texorpdfstring{addSpacesAroundOperators()}{addSpacesAroundOperators()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_spacer_afb018de1f11cd5c59c7f08ee2eb90e8a} 
+std\+::string RPN\+::\+Spacer\+::add\+Spaces\+Around\+Operators (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Adds spaces around each operator in the equation. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00407}{407}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{struct_r_p_n_1_1_spacer_a6e58d95311b1d9a64d58e11d0c537d15}\index{RPN::Spacer@{RPN::Spacer}!addSpacesAroundParentheses@{addSpacesAroundParentheses}}
+\index{addSpacesAroundParentheses@{addSpacesAroundParentheses}!RPN::Spacer@{RPN::Spacer}}
+\doxysubsubsection{\texorpdfstring{addSpacesAroundParentheses()}{addSpacesAroundParentheses()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_spacer_a6e58d95311b1d9a64d58e11d0c537d15} 
+std\+::string RPN\+::\+Spacer\+::add\+Spaces\+Around\+Parentheses (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Prepares equation to be fed into \doxylink{struct_r_p_n_1_1_notation_converter}{Notation\+Converter}. Key idea is that each token in the converter needs to be separated by a space, that is operands, operators, parentheses. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00381}{381}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{struct_r_p_n_1_1_spacer_a6f2961141f78438ed216bb465a7f205a}\index{RPN::Spacer@{RPN::Spacer}!mergeSpaces@{mergeSpaces}}
+\index{mergeSpaces@{mergeSpaces}!RPN::Spacer@{RPN::Spacer}}
+\doxysubsubsection{\texorpdfstring{mergeSpaces()}{mergeSpaces()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_spacer_a6f2961141f78438ed216bb465a7f205a} 
+std\+::string RPN\+::\+Spacer\+::merge\+Spaces (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Combines multiple spaces into single space character. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00446}{446}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{struct_r_p_n_1_1_spacer_a48df4d592bd1f1221e5d13594c4b1aaa}\index{RPN::Spacer@{RPN::Spacer}!removeSpacesAroundOperators@{removeSpacesAroundOperators}}
+\index{removeSpacesAroundOperators@{removeSpacesAroundOperators}!RPN::Spacer@{RPN::Spacer}}
+\doxysubsubsection{\texorpdfstring{removeSpacesAroundOperators()}{removeSpacesAroundOperators()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_spacer_a48df4d592bd1f1221e5d13594c4b1aaa} 
+std\+::string RPN\+::\+Spacer\+::remove\+Spaces\+Around\+Operators (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Removes spaces around each operator in the equation. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00426}{426}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{struct_r_p_n_1_1_spacer_af4aebfeea9b8e7272078a649e76f81be}\index{RPN::Spacer@{RPN::Spacer}!removeSpacesAroundParentheses@{removeSpacesAroundParentheses}}
+\index{removeSpacesAroundParentheses@{removeSpacesAroundParentheses}!RPN::Spacer@{RPN::Spacer}}
+\doxysubsubsection{\texorpdfstring{removeSpacesAroundParentheses()}{removeSpacesAroundParentheses()}}
+{\footnotesize\ttfamily \label{struct_r_p_n_1_1_spacer_af4aebfeea9b8e7272078a649e76f81be} 
+std\+::string RPN\+::\+Spacer\+::remove\+Spaces\+Around\+Parentheses (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Removes all spaces around parentheses. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\mbox{\hyperlink{_r_p_n_8h}{RPN.\+h}}\item 
+lib/\mbox{\hyperlink{_r_p_n_8cpp}{RPN.\+cpp}}\end{DoxyCompactItemize}

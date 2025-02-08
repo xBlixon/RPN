@@ -1,0 +1,98 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}RPN.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}{help}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55}{set\+Flags}} (const std\+::string \&flags)
+\item 
+void \mbox{\hyperlink{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}{error\+Invalid\+Equation}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a5ac199b66a045d3d0a0e38f137834483}{solve\+For\+Output}} (const std\+::string \&source\+Equation, std\+::string \&output\+Equation, double \&result)
+\item 
+int \mbox{\hyperlink{main_8cpp_a638b85ceffac097c2aa79b76ba8c055e}{main}} (const int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{input\+File\+Pos}} = -\/1
+\item 
+int \mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{output\+File\+Pos}} = -\/1
+\item 
+bool \mbox{\hyperlink{main_8cpp_adeade2d654ba96d62909682fcc862c61}{is\+Interactive}} = false
+\item 
+bool \mbox{\hyperlink{main_8cpp_a2af46947397af1598646e93b55e8f12a}{is\+RPNOutput}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}\index{main.cpp@{main.cpp}!errorInvalidEquation@{errorInvalidEquation}}
+\index{errorInvalidEquation@{errorInvalidEquation}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{errorInvalidEquation()}{errorInvalidEquation()}}
+{\footnotesize\ttfamily \label{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b} 
+void error\+Invalid\+Equation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}\index{main.cpp@{main.cpp}!help@{help}}
+\index{help@{help}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily \label{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc} 
+void help (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Outputs help when executable has no parameters. \Hypertarget{main_8cpp_a638b85ceffac097c2aa79b76ba8c055e}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a638b85ceffac097c2aa79b76ba8c055e} 
+int main (\begin{DoxyParamCaption}\item[{const int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55}\index{main.cpp@{main.cpp}!setFlags@{setFlags}}
+\index{setFlags@{setFlags}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setFlags()}{setFlags()}}
+{\footnotesize\ttfamily \label{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55} 
+void set\+Flags (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{flags}{}\end{DoxyParamCaption})}
+
+Reads flags and configures their values. 
+\begin{DoxyParams}{Parameters}
+{\em flags} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a5ac199b66a045d3d0a0e38f137834483}\index{main.cpp@{main.cpp}!solveForOutput@{solveForOutput}}
+\index{solveForOutput@{solveForOutput}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{solveForOutput()}{solveForOutput()}}
+{\footnotesize\ttfamily \label{main_8cpp_a5ac199b66a045d3d0a0e38f137834483} 
+void solve\+For\+Output (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{source\+Equation}{, }\item[{std\+::string \&}]{output\+Equation}{, }\item[{double \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}\index{main.cpp@{main.cpp}!inputFilePos@{inputFilePos}}
+\index{inputFilePos@{inputFilePos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{inputFilePos}{inputFilePos}}
+{\footnotesize\ttfamily \label{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e} 
+int input\+File\+Pos = -\/1}
+
+\Hypertarget{main_8cpp_adeade2d654ba96d62909682fcc862c61}\index{main.cpp@{main.cpp}!isInteractive@{isInteractive}}
+\index{isInteractive@{isInteractive}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{isInteractive}{isInteractive}}
+{\footnotesize\ttfamily \label{main_8cpp_adeade2d654ba96d62909682fcc862c61} 
+bool is\+Interactive = false}
+
+\Hypertarget{main_8cpp_a2af46947397af1598646e93b55e8f12a}\index{main.cpp@{main.cpp}!isRPNOutput@{isRPNOutput}}
+\index{isRPNOutput@{isRPNOutput}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{isRPNOutput}{isRPNOutput}}
+{\footnotesize\ttfamily \label{main_8cpp_a2af46947397af1598646e93b55e8f12a} 
+bool is\+RPNOutput = false}
+
+\Hypertarget{main_8cpp_a835c0a8488df6528e41b04b018b46d43}\index{main.cpp@{main.cpp}!outputFilePos@{outputFilePos}}
+\index{outputFilePos@{outputFilePos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{outputFilePos}{outputFilePos}}
+{\footnotesize\ttfamily \label{main_8cpp_a835c0a8488df6528e41b04b018b46d43} 
+int output\+File\+Pos = -\/1}
+

@@ -3,11 +3,15 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_equation_validator}{Equation\+Validator}}
+\item 
 struct \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter}{Notation\+Converter}}
 \item 
 struct \mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner}{Notation\+Determiner}}
 \item 
 struct \mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver}{RPNSolver}}
+\item 
+struct \mbox{\hyperlink{struct_r_p_n_1_1_spacer}{Spacer}}
 \item 
 struct \mbox{\hyperlink{struct_r_p_n_1_1_token_reader}{Token\+Reader}}
 \end{DoxyCompactItemize}
@@ -70,6 +74,10 @@ Given operator and operands calculates the result
 \begin{DoxyReturn}{Returns}
 result 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_a41a1f57c34db2840641d9a451864e2e4}\index{RPN@{RPN}!calculate@{calculate}}
 \index{calculate@{calculate}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{calculate()}{calculate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -86,7 +94,11 @@ Given operator and operand calculates the result
 \begin{DoxyReturn}{Returns}
 result 
 \end{DoxyReturn}
-Integers found in cases of this switch come from the sum of ascii values of letters of the operators.\Hypertarget{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245}\index{RPN@{RPN}!handleCbrt@{handleCbrt}}
+Integers found in cases of this switch come from the sum of ascii values of letters of the operators.
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245}\index{RPN@{RPN}!handleCbrt@{handleCbrt}}
 \index{handleCbrt@{handleCbrt}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{handleCbrt()}{handleCbrt()}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_a65b288526c79fa6aacfabe23b0f87245} 
@@ -100,6 +112,10 @@ Calculates cubic roots and errors on negative numbers.
 \begin{DoxyReturn}{Returns}
 cbrt(a) 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_a30f0dc82e654f7488605195eab2ffbdd}\index{RPN@{RPN}!handleDivision@{handleDivision}}
 \index{handleDivision@{handleDivision}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{handleDivision()}{handleDivision()}}
@@ -116,6 +132,10 @@ Handler for division. Throws error on divisor = 0.
 \begin{DoxyReturn}{Returns}
 a/b 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_a083ba7675db30910692cf44242dac9bb}\index{RPN@{RPN}!handleSqrt@{handleSqrt}}
 \index{handleSqrt@{handleSqrt}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{handleSqrt()}{handleSqrt()}}
@@ -130,6 +150,10 @@ Calculates square roots and errors on negative numbers.
 \begin{DoxyReturn}{Returns}
 sqrt(a) 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_aade496061907eae539c0d2cb5554bb4b}\index{RPN@{RPN}!is1ArgOperator@{is1ArgOperator}}
 \index{is1ArgOperator@{is1ArgOperator}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{is1ArgOperator()}{is1ArgOperator()}}
@@ -139,6 +163,10 @@ bool RPN\+::is1\+Arg\+Operator (\begin{DoxyParamCaption}\item[{const std\+::stri
 Checks if given token is an operator that takes only 1 argument, e.\+g. sqrt(x). \begin{DoxyReturn}{Returns}
 true if is 1 argument operator. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00195}{195}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_ab3528a273cb511a2be3afd24d894c778}\index{RPN@{RPN}!is2ArgOperator@{is2ArgOperator}}
 \index{is2ArgOperator@{is2ArgOperator}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{is2ArgOperator()}{is2ArgOperator()}}
@@ -148,6 +176,10 @@ bool RPN\+::is2\+Arg\+Operator (\begin{DoxyParamCaption}\item[{const std\+::stri
 Checks if given token is an operator that takes 2 arguments, e.\+g. a + b. \begin{DoxyReturn}{Returns}
 true if is 2 argument operator. 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_a31760f8d403f274efee648b0e1abf2bd}\index{RPN@{RPN}!isOperator@{isOperator}}
 \index{isOperator@{isOperator}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{isOperator()}{isOperator()}}
@@ -162,6 +194,10 @@ Checks if given string is a valid operator
 \begin{DoxyReturn}{Returns}
 true if string is an operator 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
 \Hypertarget{namespace_r_p_n_a3a36e2730c954cfb258f13773efe6a57}\index{RPN@{RPN}!sumLetters@{sumLetters}}
 \index{sumLetters@{sumLetters}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{sumLetters()}{sumLetters()}}
@@ -178,6 +214,10 @@ Ascii sum of letters.
 \end{DoxyReturn}
 
 
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+
+
 \doxysubsection{Variable Documentation}
 \Hypertarget{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f}\index{RPN@{RPN}!ADD\_SUB\_PREC@{ADD\_SUB\_PREC}}
 \index{ADD\_SUB\_PREC@{ADD\_SUB\_PREC}!RPN@{RPN}}
@@ -185,19 +225,31 @@ Ascii sum of letters.
 {\footnotesize\ttfamily \label{namespace_r_p_n_a5a57eb029bc0896736589da132690f6f} 
 int RPN\+::\+ADD\+\_\+\+SUB\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}{MULT\+\_\+\+DIV\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-Addition/subtraction precedence score. \Hypertarget{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}\index{RPN@{RPN}!EXP\_PREC@{EXP\_PREC}}
+Addition/subtraction precedence score. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}\index{RPN@{RPN}!EXP\_PREC@{EXP\_PREC}}
 \index{EXP\_PREC@{EXP\_PREC}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{EXP\_PREC}{EXP\_PREC}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3} 
 int RPN\+::\+EXP\+\_\+\+PREC = 100\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-Exponential precedence score. \Hypertarget{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}\index{RPN@{RPN}!MULT\_DIV\_PREC@{MULT\_DIV\_PREC}}
+Exponential precedence score. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229}\index{RPN@{RPN}!MULT\_DIV\_PREC@{MULT\_DIV\_PREC}}
 \index{MULT\_DIV\_PREC@{MULT\_DIV\_PREC}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{MULT\_DIV\_PREC}{MULT\_DIV\_PREC}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_a2920e99b70638f31f9d95db04fad3229} 
 int RPN\+::\+MULT\+\_\+\+DIV\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}{TRIG\+\_\+\+FUN\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-Multiplication/division precedence score. \Hypertarget{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72}\index{RPN@{RPN}!one\_arg\_operators@{one\_arg\_operators}}
+Multiplication/division precedence score. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72}\index{RPN@{RPN}!one\_arg\_operators@{one\_arg\_operators}}
 \index{one\_arg\_operators@{one\_arg\_operators}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{one\_arg\_operators}{one\_arg\_operators}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_a1a4778839c205c8f3cd1988fa7070c72} 
@@ -214,7 +266,11 @@ const std\+::unordered\+\_\+set$<$std\+::string$>$ RPN\+::one\+\_\+arg\+\_\+oper
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
-Operators taking 1 parameter \Hypertarget{namespace_r_p_n_ac9384bfd0591693609addd50100f157f}\index{RPN@{RPN}!operatorPrecedence@{operatorPrecedence}}
+Operators taking 1 parameter 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00161}{161}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_ac9384bfd0591693609addd50100f157f}\index{RPN@{RPN}!operatorPrecedence@{operatorPrecedence}}
 \index{operatorPrecedence@{operatorPrecedence}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{operatorPrecedence}{operatorPrecedence}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_ac9384bfd0591693609addd50100f157f} 
@@ -237,13 +293,21 @@ const std\+::map$<$std\+::string, int$>$ RPN\+::operator\+Precedence}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
-Mapped precedences to operators. \Hypertarget{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}\index{RPN@{RPN}!TRIG\_FUN\_PREC@{TRIG\_FUN\_PREC}}
+Mapped precedences to operators. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551}\index{RPN@{RPN}!TRIG\_FUN\_PREC@{TRIG\_FUN\_PREC}}
 \index{TRIG\_FUN\_PREC@{TRIG\_FUN\_PREC}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{TRIG\_FUN\_PREC}{TRIG\_FUN\_PREC}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_a875486e34a826c4a0cb01919226fa551} 
 int RPN\+::\+TRIG\+\_\+\+FUN\+\_\+\+PREC = \mbox{\hyperlink{namespace_r_p_n_aeb68c0861176b8aefd547d5e4ac577c3}{EXP\+\_\+\+PREC}}-\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-Trigonometric functions precedence score. \Hypertarget{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf}\index{RPN@{RPN}!two\_arg\_operators@{two\_arg\_operators}}
+Trigonometric functions precedence score. 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+
+\Hypertarget{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf}\index{RPN@{RPN}!two\_arg\_operators@{two\_arg\_operators}}
 \index{two\_arg\_operators@{two\_arg\_operators}!RPN@{RPN}}
 \doxysubsubsection{\texorpdfstring{two\_arg\_operators}{two\_arg\_operators}}
 {\footnotesize\ttfamily \label{namespace_r_p_n_a9b7226b0e1b32e0a1170f850948b47cf} 
@@ -262,3 +326,6 @@ const std\+::unordered\+\_\+set$<$std\+::string$>$ RPN\+::two\+\_\+arg\+\_\+oper
 
 \end{DoxyCode}
 Operators taking 2 parameters 
+
+Definition at line \mbox{\hyperlink{_r_p_n_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_r_p_n_8cpp_source}{RPN.\+cpp}}.
+

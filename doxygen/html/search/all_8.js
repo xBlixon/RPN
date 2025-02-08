@@ -13,5 +13,7 @@ var searchData=
   ['isinteractive_10',['isInteractive',['../main_8cpp.html#adeade2d654ba96d62909682fcc862c61',1,'main.cpp']]],
   ['isoperator_11',['isOperator',['../namespace_r_p_n.html#a31760f8d403f274efee648b0e1abf2bd',1,'RPN']]],
   ['isrpn_12',['isRPN',['../struct_r_p_n_1_1_notation_determiner.html#aa0062e501c0d2962918dcec37b417eb8',1,'RPN::NotationDeterminer']]],
-  ['isrpnoutput_13',['isRPNOutput',['../main_8cpp.html#a2af46947397af1598646e93b55e8f12a',1,'main.cpp']]]
+  ['isrpnoutput_13',['isRPNOutput',['../main_8cpp.html#a2af46947397af1598646e93b55e8f12a',1,'main.cpp']]],
+  ['isvalidinfix_14',['isValidInfix',['../struct_r_p_n_1_1_equation_validator.html#a5807a6d247f88a48daf441a13fb34a5a',1,'RPN::EquationValidator']]],
+  ['isvalidrpn_15',['isValidRPN',['../struct_r_p_n_1_1_equation_validator.html#a796acc8a79f88a5391a3fbdf4fbf3004',1,'RPN::EquationValidator']]]
 ];

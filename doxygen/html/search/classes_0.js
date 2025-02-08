@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['notationconverter_0',['NotationConverter',['../struct_r_p_n_1_1_notation_converter.html',1,'RPN']]],
-  ['notationdeterminer_1',['NotationDeterminer',['../struct_r_p_n_1_1_notation_determiner.html',1,'RPN']]]
+  ['equationvalidator_0',['EquationValidator',['../struct_r_p_n_1_1_equation_validator.html',1,'RPN']]]
 ];

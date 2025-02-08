@@ -1,0 +1,310 @@
+\begin{theindex}
+
+  \item {\_\_has\_include}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{36}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{66}
+
+  \indexspace
+
+  \item {ADD\_SUB\_PREC}
+    \subitem {RPN}, \hyperpage{11}
+  \item {addSpacesAroundOperators}
+    \subitem {RPN::Spacer}, \hyperpage{17}
+  \item {addSpacesAroundParentheses}
+    \subitem {RPN::Spacer}, \hyperpage{17}
+  \item {ARCHITECTURE\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{36}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{66}
+
+  \indexspace
+
+  \item {build/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.c}, 
+		\hyperpage{21}, \hyperpage{25}
+  \item {build/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp}, 
+		\hyperpage{50}, \hyperpage{55}
+  \item {build/CMakeFiles/3.31.0/CompilerIdC/CMakeCCompilerId.c}, 
+		\hyperpage{35}, \hyperpage{40}
+  \item {build/CMakeFiles/3.31.0/CompilerIdCXX/CMakeCXXCompilerId.cpp}, 
+		\hyperpage{65}, \hyperpage{70}
+  \item {build/CMakeFiles/RPN.dir/main.cpp.obj.d}, \hyperpage{80}
+  \item {build/lib/CMakeFiles/RPN\_LIB.dir/RPN.cpp.obj.d}, 
+		\hyperpage{82}
+
+  \indexspace
+
+  \item {C\_STD\_11}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{36}
+  \item {C\_STD\_17}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{36}
+  \item {C\_STD\_23}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{37}
+  \item {C\_STD\_99}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{37}
+  \item {C\_VERSION}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{37}
+  \item {calculate}
+    \subitem {RPN}, \hyperpage{8}
+  \item {CMakeCCompilerId.c}
+    \subitem {\_\_has\_include}, \hyperpage{22}, \hyperpage{36}
+    \subitem {ARCHITECTURE\_ID}, \hyperpage{22}, \hyperpage{36}
+    \subitem {C\_STD\_11}, \hyperpage{22}, \hyperpage{36}
+    \subitem {C\_STD\_17}, \hyperpage{22}, \hyperpage{36}
+    \subitem {C\_STD\_23}, \hyperpage{22}, \hyperpage{37}
+    \subitem {C\_STD\_99}, \hyperpage{22}, \hyperpage{37}
+    \subitem {C\_VERSION}, \hyperpage{22}, \hyperpage{37}
+    \subitem {COMPILER\_ID}, \hyperpage{22}, \hyperpage{37}
+    \subitem {DEC}, \hyperpage{23}, \hyperpage{37}
+    \subitem {HEX}, \hyperpage{23}, \hyperpage{37}
+    \subitem {info\_arch}, \hyperpage{24}, \hyperpage{39}
+    \subitem {info\_compiler}, \hyperpage{24}, \hyperpage{39}
+    \subitem {info\_language\_extensions\_default}, \hyperpage{24}, 
+		\hyperpage{39}
+    \subitem {info\_language\_standard\_default}, \hyperpage{24}, 
+		\hyperpage{39}
+    \subitem {info\_platform}, \hyperpage{25}, \hyperpage{39}
+    \subitem {main}, \hyperpage{24}, \hyperpage{38}
+    \subitem {PLATFORM\_ID}, \hyperpage{23}, \hyperpage{38}
+    \subitem {STRINGIFY}, \hyperpage{23}, \hyperpage{38}
+    \subitem {STRINGIFY\_HELPER}, \hyperpage{23}, \hyperpage{38}
+  \item {CMakeCXXCompilerId.cpp}
+    \subitem {\_\_has\_include}, \hyperpage{51}, \hyperpage{66}
+    \subitem {ARCHITECTURE\_ID}, \hyperpage{51}, \hyperpage{66}
+    \subitem {COMPILER\_ID}, \hyperpage{51}, \hyperpage{66}
+    \subitem {CXX\_STD}, \hyperpage{51}, \hyperpage{66}
+    \subitem {CXX\_STD\_11}, \hyperpage{51}, \hyperpage{66}
+    \subitem {CXX\_STD\_14}, \hyperpage{51}, \hyperpage{67}
+    \subitem {CXX\_STD\_17}, \hyperpage{52}, \hyperpage{67}
+    \subitem {CXX\_STD\_20}, \hyperpage{52}, \hyperpage{67}
+    \subitem {CXX\_STD\_23}, \hyperpage{52}, \hyperpage{67}
+    \subitem {CXX\_STD\_98}, \hyperpage{52}, \hyperpage{67}
+    \subitem {DEC}, \hyperpage{52}, \hyperpage{67}
+    \subitem {HEX}, \hyperpage{52}, \hyperpage{67}
+    \subitem {info\_arch}, \hyperpage{54}, \hyperpage{69}
+    \subitem {info\_compiler}, \hyperpage{54}, \hyperpage{69}
+    \subitem {info\_language\_extensions\_default}, \hyperpage{54}, 
+		\hyperpage{69}
+    \subitem {info\_language\_standard\_default}, \hyperpage{54}, 
+		\hyperpage{69}
+    \subitem {info\_platform}, \hyperpage{54}, \hyperpage{69}
+    \subitem {main}, \hyperpage{53}, \hyperpage{68}
+    \subitem {PLATFORM\_ID}, \hyperpage{53}, \hyperpage{68}
+    \subitem {STRINGIFY}, \hyperpage{53}, \hyperpage{68}
+    \subitem {STRINGIFY\_HELPER}, \hyperpage{53}, \hyperpage{68}
+  \item {COMPILER\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{22}, \hyperpage{37}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{66}
+  \item {CXX\_STD}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{66}
+  \item {CXX\_STD\_11}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{66}
+  \item {CXX\_STD\_14}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{51}, \hyperpage{67}
+  \item {CXX\_STD\_17}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+  \item {CXX\_STD\_20}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+  \item {CXX\_STD\_23}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+  \item {CXX\_STD\_98}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+
+  \indexspace
+
+  \item {DEC}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{23}, \hyperpage{37}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+
+  \indexspace
+
+  \item {errorInvalidEquation}
+    \subitem {main.cpp}, \hyperpage{91}
+  \item {EXP\_PREC}
+    \subitem {RPN}, \hyperpage{11}
+
+  \indexspace
+
+  \item {finished}
+    \subitem {RPN::TokenReader}, \hyperpage{19}
+
+  \indexspace
+
+  \item {getResult}
+    \subitem {RPN::RPNSolver}, \hyperpage{16}
+  \item {getString}
+    \subitem {RPN::TokenReader}, \hyperpage{19}
+
+  \indexspace
+
+  \item {handleCbrt}
+    \subitem {RPN}, \hyperpage{8}
+  \item {handleDivision}
+    \subitem {RPN}, \hyperpage{9}
+  \item {handleSqrt}
+    \subitem {RPN}, \hyperpage{9}
+  \item {help}
+    \subitem {main.cpp}, \hyperpage{91}
+  \item {HEX}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{23}, \hyperpage{37}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{52}, \hyperpage{67}
+
+  \indexspace
+
+  \item {infixToRPN}
+    \subitem {RPN::NotationConverter}, \hyperpage{14}
+  \item {info\_arch}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{24}, \hyperpage{39}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{54}, \hyperpage{69}
+  \item {info\_compiler}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{24}, \hyperpage{39}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{54}, \hyperpage{69}
+  \item {info\_language\_extensions\_default}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{24}, \hyperpage{39}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{54}, \hyperpage{69}
+  \item {info\_language\_standard\_default}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{24}, \hyperpage{39}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{54}, \hyperpage{69}
+  \item {info\_platform}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{25}, \hyperpage{39}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{54}, \hyperpage{69}
+  \item {inputFilePos}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {is1ArgOperator}
+    \subitem {RPN}, \hyperpage{9}
+  \item {is2ArgOperator}
+    \subitem {RPN}, \hyperpage{10}
+  \item {isInfix}
+    \subitem {RPN::NotationDeterminer}, \hyperpage{15}
+  \item {isInteractive}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {isOperator}
+    \subitem {RPN}, \hyperpage{10}
+  \item {isRPN}
+    \subitem {RPN::NotationDeterminer}, \hyperpage{15}
+  \item {isRPNOutput}
+    \subitem {main.cpp}, \hyperpage{93}
+  \item {isValidInfix}
+    \subitem {RPN::EquationValidator}, \hyperpage{13}
+  \item {isValidRPN}
+    \subitem {RPN::EquationValidator}, \hyperpage{13}
+
+  \indexspace
+
+  \item {lib/RPN.cpp}, \hyperpage{84}
+  \item {lib/RPN.h}, \hyperpage{90}
+
+  \indexspace
+
+  \item {main}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{24}, \hyperpage{38}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{53}, \hyperpage{68}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {main.cpp}, \hyperpage{91}
+    \subitem {errorInvalidEquation}, \hyperpage{91}
+    \subitem {help}, \hyperpage{91}
+    \subitem {inputFilePos}, \hyperpage{92}
+    \subitem {isInteractive}, \hyperpage{92}
+    \subitem {isRPNOutput}, \hyperpage{93}
+    \subitem {main}, \hyperpage{92}
+    \subitem {outputFilePos}, \hyperpage{93}
+    \subitem {setFlags}, \hyperpage{92}
+    \subitem {solveForOutput}, \hyperpage{92}
+  \item {mergeSpaces}
+    \subitem {RPN::Spacer}, \hyperpage{17}
+  \item {MULT\_DIV\_PREC}
+    \subitem {RPN}, \hyperpage{11}
+
+  \indexspace
+
+  \item {next}
+    \subitem {RPN::TokenReader}, \hyperpage{19}
+
+  \indexspace
+
+  \item {one\_arg\_operators}
+    \subitem {RPN}, \hyperpage{11}
+  \item {operatorPrecedence}
+    \subitem {RPN}, \hyperpage{11}
+  \item {outputFilePos}
+    \subitem {main.cpp}, \hyperpage{93}
+
+  \indexspace
+
+  \item {peek}
+    \subitem {RPN::TokenReader}, \hyperpage{19}
+  \item {PLATFORM\_ID}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{23}, \hyperpage{38}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{53}, \hyperpage{68}
+
+  \indexspace
+
+  \item {removeSpacesAroundOperators}
+    \subitem {RPN::Spacer}, \hyperpage{17}
+  \item {removeSpacesAroundParentheses}
+    \subitem {RPN::Spacer}, \hyperpage{18}
+  \item {RPN}, \hyperpage{7}
+    \subitem {ADD\_SUB\_PREC}, \hyperpage{11}
+    \subitem {calculate}, \hyperpage{8}
+    \subitem {EXP\_PREC}, \hyperpage{11}
+    \subitem {handleCbrt}, \hyperpage{8}
+    \subitem {handleDivision}, \hyperpage{9}
+    \subitem {handleSqrt}, \hyperpage{9}
+    \subitem {is1ArgOperator}, \hyperpage{9}
+    \subitem {is2ArgOperator}, \hyperpage{10}
+    \subitem {isOperator}, \hyperpage{10}
+    \subitem {MULT\_DIV\_PREC}, \hyperpage{11}
+    \subitem {one\_arg\_operators}, \hyperpage{11}
+    \subitem {operatorPrecedence}, \hyperpage{11}
+    \subitem {sumLetters}, \hyperpage{10}
+    \subitem {TRIG\_FUN\_PREC}, \hyperpage{12}
+    \subitem {two\_arg\_operators}, \hyperpage{12}
+  \item {RPN::EquationValidator}, \hyperpage{13}
+    \subitem {isValidInfix}, \hyperpage{13}
+    \subitem {isValidRPN}, \hyperpage{13}
+  \item {RPN::NotationConverter}, \hyperpage{14}
+    \subitem {infixToRPN}, \hyperpage{14}
+    \subitem {RPNtoInfix}, \hyperpage{14}
+  \item {RPN::NotationDeterminer}, \hyperpage{15}
+    \subitem {isInfix}, \hyperpage{15}
+    \subitem {isRPN}, \hyperpage{15}
+  \item {RPN::RPNSolver}, \hyperpage{16}
+    \subitem {getResult}, \hyperpage{16}
+  \item {RPN::Spacer}, \hyperpage{17}
+    \subitem {addSpacesAroundOperators}, \hyperpage{17}
+    \subitem {addSpacesAroundParentheses}, \hyperpage{17}
+    \subitem {mergeSpaces}, \hyperpage{17}
+    \subitem {removeSpacesAroundOperators}, \hyperpage{17}
+    \subitem {removeSpacesAroundParentheses}, \hyperpage{18}
+  \item {RPN::TokenReader}, \hyperpage{18}
+    \subitem {finished}, \hyperpage{19}
+    \subitem {getString}, \hyperpage{19}
+    \subitem {next}, \hyperpage{19}
+    \subitem {peek}, \hyperpage{19}
+    \subitem {TokenReader}, \hyperpage{18}
+  \item {RPNtoInfix}
+    \subitem {RPN::NotationConverter}, \hyperpage{14}
+
+  \indexspace
+
+  \item {setFlags}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {solveForOutput}
+    \subitem {main.cpp}, \hyperpage{92}
+  \item {STRINGIFY}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{23}, \hyperpage{38}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{53}, \hyperpage{68}
+  \item {STRINGIFY\_HELPER}
+    \subitem {CMakeCCompilerId.c}, \hyperpage{23}, \hyperpage{38}
+    \subitem {CMakeCXXCompilerId.cpp}, \hyperpage{53}, \hyperpage{68}
+  \item {sumLetters}
+    \subitem {RPN}, \hyperpage{10}
+
+  \indexspace
+
+  \item {TokenReader}
+    \subitem {RPN::TokenReader}, \hyperpage{18}
+  \item {TRIG\_FUN\_PREC}
+    \subitem {RPN}, \hyperpage{12}
+  \item {two\_arg\_operators}
+    \subitem {RPN}, \hyperpage{12}
+
+\end{theindex}

@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
   0: "_acdefghimnoprst",
-  1: "nrt",
+  1: "enrst",
   2: "r",
   3: "cmr",
-  4: "cfghimnprst",
+  4: "acefghimnprst",
   5: "aeimot",
   6: "_acdhps"
 };

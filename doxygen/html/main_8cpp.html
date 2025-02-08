@@ -34,7 +34,7 @@
   <td id="projectalign">
    <div id="projectname">RPN
    </div>
-   <div id="projectbrief">RPN calculator</div>
+   <div id="projectbrief">Reverse Polish Notation Calculator</div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,7 +104,6 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
@@ -115,18 +114,22 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &quot;<a class="el" href="_r_p_n_8h_source.html">RPN.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ad72dbcf6d0153db1b8d8a58001feed83" id="r_ad72dbcf6d0153db1b8d8a58001feed83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad72dbcf6d0153db1b8d8a58001feed83">DEBUG</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ad72dbcf6d0153db1b8d8a58001feed83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
+</div>
+</div>
+<p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a97ee70a8770dc30d06c744b24eb2fcfc" id="r_a97ee70a8770dc30d06c744b24eb2fcfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97ee70a8770dc30d06c744b24eb2fcfc">help</a> ()</td></tr>
 <tr class="separator:a97ee70a8770dc30d06c744b24eb2fcfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575fda94d8bcc88ec40ed12490f51c55" id="r_a575fda94d8bcc88ec40ed12490f51c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a575fda94d8bcc88ec40ed12490f51c55">setFlags</a> (const std::string &amp;flags)</td></tr>
 <tr class="separator:a575fda94d8bcc88ec40ed12490f51c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff4b46ea45b7cfa673b916df0ad229b" id="r_aaff4b46ea45b7cfa673b916df0ad229b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff4b46ea45b7cfa673b916df0ad229b">errorInvalidEquation</a> ()</td></tr>
+<tr class="separator:aaff4b46ea45b7cfa673b916df0ad229b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac199b66a045d3d0a0e38f137834483" id="r_a5ac199b66a045d3d0a0e38f137834483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac199b66a045d3d0a0e38f137834483">solveForOutput</a> (const std::string &amp;sourceEquation, std::string &amp;outputEquation, double &amp;result)</td></tr>
 <tr class="separator:a5ac199b66a045d3d0a0e38f137834483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a638b85ceffac097c2aa79b76ba8c055e" id="r_a638b85ceffac097c2aa79b76ba8c055e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a638b85ceffac097c2aa79b76ba8c055e">main</a> (const int argc, char *argv[])</td></tr>
@@ -143,22 +146,26 @@ Variables</h2></td></tr>
 <tr class="memitem:a2af46947397af1598646e93b55e8f12a" id="r_a2af46947397af1598646e93b55e8f12a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2af46947397af1598646e93b55e8f12a">isRPNOutput</a> = false</td></tr>
 <tr class="separator:a2af46947397af1598646e93b55e8f12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ad72dbcf6d0153db1b8d8a58001feed83" name="ad72dbcf6d0153db1b8d8a58001feed83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad72dbcf6d0153db1b8d8a58001feed83">&#9670;&#160;</a></span>DEBUG</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aaff4b46ea45b7cfa673b916df0ad229b" name="aaff4b46ea45b7cfa673b916df0ad229b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff4b46ea45b7cfa673b916df0ad229b">&#9670;&#160;</a></span>errorInvalidEquation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEBUG&#160;&#160;&#160;0</td>
+          <td class="memname">void errorInvalidEquation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
 <a id="a97ee70a8770dc30d06c744b24eb2fcfc" name="a97ee70a8770dc30d06c744b24eb2fcfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97ee70a8770dc30d06c744b24eb2fcfc">&#9670;&#160;</a></span>help()</h2>
 
@@ -174,6 +181,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Outputs help when executable has no parameters. </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00010">10</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,6 +204,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,6 +229,8 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00036">36</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,6 +258,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00064">64</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -260,6 +275,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00027">27</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
 </div>
 </div>
 <a id="adeade2d654ba96d62909682fcc862c61" name="adeade2d654ba96d62909682fcc862c61"></a>
@@ -273,6 +290,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,6 +307,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00030">30</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a835c0a8488df6528e41b04b018b46d43" name="a835c0a8488df6528e41b04b018b46d43"></a>
@@ -301,6 +322,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00028">28</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

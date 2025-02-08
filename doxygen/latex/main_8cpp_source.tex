@@ -1,0 +1,117 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_p_n_8h}{RPN.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}{help}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Usage:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/i\ \ \ \ Input\ file\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/o\ \ \ \ Output\ file\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/c\ \ \ \ Interactive\ input\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/r\ \ \ \ Use\ Postfix\ in\ output\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Examples:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/io\ input.txt\ output.txt\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/oi\ output.txt\ input.txt\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/cor\ interactive\_rpn\_output.txt\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}\mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{00027}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{inputFilePos}}\ \ \ \ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}\mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{00028}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{outputFilePos}}\ \ \ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}\mbox{\hyperlink{main_8cpp_adeade2d654ba96d62909682fcc862c61}{00029}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main_8cpp_adeade2d654ba96d62909682fcc862c61}{isInteractive}}\ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}\mbox{\hyperlink{main_8cpp_a2af46947397af1598646e93b55e8f12a}{00030}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{main_8cpp_a2af46947397af1598646e93b55e8f12a}{isRPNOutput}}\ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}\mbox{\hyperlink{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55}{00036}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55}{setFlags}}(\textcolor{keyword}{const}\ std::string\ \&flags)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ nonPositionalSkips\ =\ 0;\ \textcolor{comment}{//c\ and\ r\ don't\ have\ parameters\ so\ need\ to\ be\ reduced.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos=1;\ pos<flags.length();\ pos++)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (flags[pos])\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'i'}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{inputFilePos}}\ =\ pos\ -\/\ nonPositionalSkips;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'o'}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{outputFilePos}}\ =\ pos\ -\/\ nonPositionalSkips;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'c'}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_adeade2d654ba96d62909682fcc862c61}{isInteractive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nonPositionalSkips++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'r'}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a2af46947397af1598646e93b55e8f12a}{isRPNOutput}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nonPositionalSkips++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}\mbox{\hyperlink{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}{errorInvalidEquation}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[ERROR]:\ This\ equation\ is\ invalid.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}\mbox{\hyperlink{main_8cpp_a5ac199b66a045d3d0a0e38f137834483}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_a5ac199b66a045d3d0a0e38f137834483}{solveForOutput}}(\textcolor{keyword}{const}\ std::string\ \&sourceEquation,\ std::string\ \&outputEquation,\ \textcolor{keywordtype}{double}\ \&result)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ spacedCopy\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a6e58d95311b1d9a64d58e11d0c537d15}{RPN::Spacer::addSpacesAroundParentheses}}(sourceEquation);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ std::string\ rpn;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ std::string\ infix;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_r_p_n_1_1_notation_determiner_a8e0ae7ea205e7d39fe11c3f091d7117f}{RPN::NotationDeterminer::isInfix}}(spacedCopy))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ infix\ =\ spacedCopy;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a5807a6d247f88a48daf441a13fb34a5a}{RPN::EquationValidator::isValidInfix}}(infix))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}{errorInvalidEquation}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ rpn\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_acdf461ac2999cf623a956940f6ac32b9}{RPN::NotationConverter::infixToRPN}}(infix);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ rpn\ =\ spacedCopy;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{struct_r_p_n_1_1_equation_validator_a796acc8a79f88a5391a3fbdf4fbf3004}{RPN::EquationValidator::isValidRPN}}(rpn))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_aaff4b46ea45b7cfa673b916df0ad229b}{errorInvalidEquation}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ infix\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_notation_converter_ae6a9e2950406c24d83680876393392af}{RPN::NotationConverter::RPNtoInfix}}(rpn);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ outputEquation\ =\ \mbox{\hyperlink{main_8cpp_a2af46947397af1598646e93b55e8f12a}{isRPNOutput}}\ ?\ rpn\ :\ infix;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ result\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_r_p_n_solver_a982cf343839f6b239de485e23b9143e5}{RPN::RPNSolver::getResult}}(rpn);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}\mbox{\hyperlink{main_8cpp_a638b85ceffac097c2aa79b76ba8c055e}{00086}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a638b85ceffac097c2aa79b76ba8c055e}{main}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}{help}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ exit(0);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{main_8cpp_a575fda94d8bcc88ec40ed12490f51c55}{setFlags}}(argv[1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ std::string\ strEquation;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{main_8cpp_adeade2d654ba96d62909682fcc862c61}{isInteractive}})\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Enter\ the\ equation:\ "{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ std::getline(std::cin,\ strEquation);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{inputFilePos}}\ !=\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ std::ifstream\ file(argv[\mbox{\hyperlink{main_8cpp_a0c8c52b8103000a16525eb8dcffea18e}{inputFilePos}}+1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ std::ostringstream\ buffer;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ buffer\ <<\ file.rdbuf();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ strEquation\ =\ buffer.str();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}No\ input\ source!\ -\/\ Use\ interactive\ or\ file\ input."{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ result;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ std::string\ outputEquation;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_a5ac199b66a045d3d0a0e38f137834483}{solveForOutput}}(strEquation,\ outputEquation,\ result);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ outputEquation\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_spacer_af4aebfeea9b8e7272078a649e76f81be}{RPN::Spacer::removeSpacesAroundParentheses}}(outputEquation);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ outputEquation\ =\ \mbox{\hyperlink{struct_r_p_n_1_1_spacer_a6f2961141f78438ed216bb465a7f205a}{RPN::Spacer::mergeSpaces}}(outputEquation);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ std::cout\ <<\ outputEquation\ <<\ \textcolor{stringliteral}{"{}\ =\ "{}}\ <<result<<std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{outputFilePos}}\ !=\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ outputFile(argv[\mbox{\hyperlink{main_8cpp_a835c0a8488df6528e41b04b018b46d43}{outputFilePos}}+1],\ std::ofstream::out);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ outputFile\ <<\ outputEquation;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ outputFile\ <<\ \textcolor{stringliteral}{"{}\ =\ "{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ outputFile\ <<\ result;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119\ \}}
+
+\end{DoxyCode}

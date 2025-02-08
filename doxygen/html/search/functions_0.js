@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['calculate_0',['calculate',['../namespace_r_p_n.html#af16e949c3d07263defd352296be192b4',1,'RPN::calculate(const double &amp;a, const double &amp;b, const std::string &amp;op)'],['../namespace_r_p_n.html#a41a1f57c34db2840641d9a451864e2e4',1,'RPN::calculate(const double &amp;a, const std::string &amp;op)']]]
+  ['addspacesaroundoperators_0',['addSpacesAroundOperators',['../struct_r_p_n_1_1_spacer.html#afb018de1f11cd5c59c7f08ee2eb90e8a',1,'RPN::Spacer']]],
+  ['addspacesaroundparentheses_1',['addSpacesAroundParentheses',['../struct_r_p_n_1_1_spacer.html#a6e58d95311b1d9a64d58e11d0c537d15',1,'RPN::Spacer']]]
 ];

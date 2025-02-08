@@ -1,6 +1,6 @@
 var main_8cpp =
 [
-    [ "DEBUG", "main_8cpp.html#ad72dbcf6d0153db1b8d8a58001feed83", null ],
+    [ "errorInvalidEquation", "main_8cpp.html#aaff4b46ea45b7cfa673b916df0ad229b", null ],
     [ "help", "main_8cpp.html#a97ee70a8770dc30d06c744b24eb2fcfc", null ],
     [ "main", "main_8cpp.html#a638b85ceffac097c2aa79b76ba8c055e", null ],
     [ "setFlags", "main_8cpp.html#a575fda94d8bcc88ec40ed12490f51c55", null ],
