@@ -62,7 +62,12 @@ void errorInvalidEquation() {
 }
 
 void solveForOutput(const std::string &sourceEquation, std::string &outputEquation, double &result) {
-    const std::string spacedCopy = RPN::Spacer::addSpacesAroundParentheses(sourceEquation);
+    const std::string spacedCopy =
+        RPN::Spacer::removeTrailingSpaces(
+            RPN::Spacer::addSpacesAroundParentheses(
+                sourceEquation
+            )
+        );
     std::string rpn;
     std::string infix;
     if (RPN::NotationDeterminer::isInfix(spacedCopy)) {

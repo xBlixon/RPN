@@ -447,6 +447,9 @@ namespace RPN {
         return std::regex_replace(input, std::regex("\\s+"), " ");
     }
 
+    std::string Spacer::removeTrailingSpaces(const std::string &input) {
+        return std::regex_replace(input, std::regex("\\s+$"), "");
+    }
 
     bool EquationValidator::is_number(const std::string &str) {
         std::istringstream iss(str);

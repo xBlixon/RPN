@@ -128,6 +128,11 @@ namespace RPN {
         * Combines multiple spaces into single space character.
         */
         static std::string mergeSpaces(const std::string& input);
+
+        /**
+        * Removes all spaces from the end of the string.
+        */
+        static std::string removeTrailingSpaces(const std::string& input);
     };
 
     struct EquationValidator {
